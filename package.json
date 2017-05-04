@@ -1,0 +1,28 @@
+{
+  "name": "wevoting",
+  "version": "1.0.0",
+  "description": "A Voting App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elevenBeans/WeVoting.git"
+  },
+  "keywords": [
+    "voting"
+  ],
+  "author": "elevenbeans",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elevenBeans/WeVoting/issues"
+  },
+  "homepage": "https://github.com/elevenBeans/WeVoting#readme",
+  "dependencies": {
+    "ejs": "^2.5.6",
+    "express": "^4.15.2",
+    "mongodb": "^2.2.26"
+  }
+}
