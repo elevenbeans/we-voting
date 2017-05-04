@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "server": "node index.js",
+    "watch": "webpack-dev-server --port 8088 --hide-modules",
+    "build": "webpack  --progress --hide-modules"
   },
   "repository": {
     "type": "git",
@@ -24,5 +26,23 @@
     "ejs": "^2.5.6",
     "express": "^4.15.2",
     "mongodb": "^2.2.26"
+  },
+  "devDependencies": {
+    "babel-core": "^6.21.0",
+    "babel-loader": "^6.2.4",
+    "babel-polyfill": "^6.20.0",
+    "babel-preset-es2015": "^6.13.2",
+    "babel-preset-react": "^6.11.1",
+    "babel-preset-stage-1": "^6.13.0",
+    "file-loader": "^0.11.1",
+    "jsx-loader": "^0.13.2",
+    "nodemon": "^1.8.1",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1",
+    "react-router": "^3.0.0",
+    "react-router-transition": "0.0.6",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.16.2"
   }
 }
