@@ -20,7 +20,6 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
 app.get('/', function(request, response) {
-	// response.header("Access-Control-Allow-Origin", "*");  
   response.render('index',{cdnUrl: CDN_URL});
 });
  

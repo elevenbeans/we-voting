@@ -1,1 +1,1 @@
-webpackJsonp([1],{0:function(o,t,c){o.exports=c(38)},38:function(o,t,c){"use strict";o.hot.accept(),console.log("init ~~")}});
+webpackJsonp([1],{0:function(n,o,t){n.exports=t(38)},38:function(n,o,t){"use strict";console.log("init ~")}});
