@@ -37,8 +37,8 @@ class Home extends Component {
 		      <h1 style={{"font-size":"36px"}}>Let's voting!</h1>
 		      <p className="lead">
 						This voting app is built by @elevenbeans, 
-						following the instructions of "Build a Voting App | Free Code Camp". 
-						Github: elevenBeans
+						following the instructions of "Build a Voting App | Free Code Camp". <br />
+						Github Name: elevenBeans
 					</p>
 		      <p>
 		      	<a
