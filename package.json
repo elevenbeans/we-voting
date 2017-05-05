@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "node index.js",
+    "start": "node index.js",
     "watch": "webpack-dev-server --port 8088 --hide-modules",
-    "build": "webpack  --progress --hide-modules"
+    "bundle": "webpack  --progress --hide-modules",
+    "build": "export NODE_ENV=production && webpack  --progress --hide-modules"  
   },
   "repository": {
     "type": "git",
@@ -25,7 +26,8 @@
   "dependencies": {
     "ejs": "^2.5.6",
     "express": "^4.15.2",
-    "mongodb": "^2.2.26"
+    "mongodb": "^2.2.26",
+    "request": "^2.81.0"
   },
   "devDependencies": {
     "babel-core": "^6.21.0",

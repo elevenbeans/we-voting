@@ -2,15 +2,20 @@ var webpack = require('webpack');
 var path = require('path');
 
 var CDN_URL = '';
+var EXTERNALS = { // dev 这里应该不加 react 和 react-dom 的 external, build 要加
+      'react':'window.React',
+      'react-dom':'window.ReactDOM'
+    };
 
 console.log('process.env.NODE_ENV in webpack config::::',process.env.NODE_ENV);
 
 if(!process.env.NODE_ENV) process.env.NODE_ENV = 'dev-HMR';
 
-if(process.env.NODE_ENV === 'dev-HMR') CDN_URL = 'http://localhost:8088';
-if(process.env.NODE_ENV === 'dev') CDN_URL = 'http://localhost:8088';
+if(process.env.NODE_ENV === 'dev-HMR' || process.env.NODE_ENV === 'dev') {
+  CDN_URL = 'http://localhost:8088';
+}
 // if(process.env.NODE_ENV === 'pre') CDN_URL = '//localhost:3000';
-if(process.env.NODE_ENV === 'prd') CDN_URL = './';
+if(process.env.NODE_ENV === 'production') CDN_URL = './';
 
 var config = {
   entry: {
@@ -24,10 +29,7 @@ var config = {
     publicPath: CDN_URL + "/dist/", //静态资源文件内的请求路径指向静态资源服务器
     filename: '[name].bundle.js'
   },
-  externals: { // dev 这里应该不加 react 和 react-dom 的 external, build 要加
-    'react':'window.React',
-    'react-dom':'window.ReactDOM'
-  },
+  externals: EXTERNALS,
   module: {
     loaders: [
       {
