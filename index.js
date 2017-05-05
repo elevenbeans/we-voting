@@ -2,6 +2,7 @@
 To do List: 
 
 + opt code
++ err throw
 + Orgnize Router
 + set login statue in cookie
 + verify when create a new poll
@@ -24,7 +25,6 @@ if(!process.env.NODE_ENV) {process.env.NODE_ENV = 'dev-HMR';}
 
 console.log('process.env.NODE_ENV in webpack config::::',process.env.NODE_ENV);
 
-// if(process.env.NODE_ENV === 'dev') CDN_URL = 'http://localhost:8088';
 if(process.env.NODE_ENV === 'production') {
 	CDN_URL = './';
 	REDIRECT_URI = 'https://we-voting-ele.herokuapp.com/login/github/callback';
@@ -37,10 +37,6 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
 app.get("/login/github/callback", function(req, resp){
- 	//resp.send(JSON.parse(resp));
- 	console.log('code:',req.query.code);
- 	console.log('state:',req.query.state);
-
 	request(
 		{
 			url:'https://github.com/login/oauth/access_token',
@@ -53,19 +49,18 @@ app.get("/login/github/callback", function(req, resp){
 			}
 		},
 		function(err, response, body){
-			console.log('body:',body);
-				request(
-					{
-						url:'https://api.github.com/user?' + body,
-					  headers: {
-  						'User-Agent': 'request'
-						}
-					},
-					function(error, res, data){
-			 			// res.send('login success');
-			 			resp.send(data);
+			request(
+				{
+					url:'https://api.github.com/user?' + body,
+				  headers: {
+						'User-Agent': 'request'
 					}
-				);
+				},
+				function(error, res, data){
+		 			// res.send('login success');
+		 			resp.send(data);
+				}
+			);
 		}
 	);
 })
