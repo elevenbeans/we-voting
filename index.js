@@ -32,7 +32,7 @@ app.get("/login/github/callback", function(req, resp){
 				client_id: '7d6b761d11f8d943d54f',
 				client_secret: '94e24dac049b6c7b3cdd754db23d6ba24a33e455',
 				code: req.query.code,
-				redirect_uri: 'http://localhost:5000/login/github/callback',
+				redirect_uri: 'https://we-voting-ele.herokuapp.com/login/github/callback',
 				state: req.query.state
 			}
 		},
