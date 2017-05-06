@@ -33,7 +33,13 @@ class Home extends Component {
   render(){
   	return(
 		  <div className="container" style={{"text-align":"center"}}> 
-		  	<div className="jumbotron">
+		  	<div
+		  		className="jumbotron"
+		  		style={{"background-color":"#fff",
+		  			"box-shadow": "0 1px 2px rgba(0,0,0,.1)",
+		  			"border-radius":"3px"
+		  		}}
+		  	>
 		      <h1 style={{"font-size":"36px"}}>Let's voting!</h1>
 		      <p className="lead">
 						This voting app is built by @elevenbeans, 
@@ -42,7 +48,7 @@ class Home extends Component {
 					</p>
 		      <p>
 		      	<a
-		      		style={{"font-weight":"100"}}
+		      		style={{"font-weight":"100","font-size":"14px","border-radius":"3px"}}
 		      		className="btn btn-lg btn-primary"
 		      		href="/login/github"
 		      		role="button"

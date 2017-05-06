@@ -1,6 +1,5 @@
 /***
-To do List: 
-
+To do List:
 + opt code
 + err throw
 + Orgnize Router
@@ -64,7 +63,7 @@ app.get("/login/github/callback", function(req, resp){
 		}
 	);
 })
-// f31d8b4552f2ab834e1f9de44513db426c338fce
+
 app.get("/login/github", function(req, resp){
   var dataStr = (new Date()).valueOf();
   var path = "https://github.com/login/oauth/authorize";

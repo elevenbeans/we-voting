@@ -49,6 +49,6 @@ class List extends Component {
 			</div>
     );
   }
+}
 
-} 
 export default List;

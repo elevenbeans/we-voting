@@ -12,7 +12,7 @@ class Header extends Component {
   render() {
     return (
 			<div>
-				<nav className="navbar navbar-inverse">
+				<nav className="navbar navbar-inverse" style={{"margin-bottom": "12px"}}>
 			  <div className="container-fluid">
 			    <div className="navbar-header">
 			      <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
