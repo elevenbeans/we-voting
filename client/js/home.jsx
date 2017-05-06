@@ -32,40 +32,58 @@ class Home extends Component {
   // }
   render(){
   	return(
-		  <div className="container" style={{"text-align":"center"}}> 
-		  	<div
-		  		className="jumbotron"
-		  		style={{
-		  			"background-color":"#fff",
-		  			"box-shadow": "0 1px 2px rgba(0,0,0,.1)",
-		  			"border-radius":"3px"
+  		<div>
+  		<div style={{"background-color":"#f1f1f1"}}>
+			  <div
+			  	className="container"
+			  > 
+			  	<div
+			  		className="jumbotron"
+			  		style={{
+			  			"background-color":"#f1f1f1"
+			  		}}
+			  	>
+			      <h1 style={{"font-size":"36px"}}>Let's voting!</h1>
+			      <p className="lead">
+							This voting app is built by @elevenbeans, 
+							following the instructions of "Build a Voting App | Free Code Camp". <br />
+							Github Name: elevenBeans
+						</p>
+			      <p>
+			      	<a
+			      		style={{
+			      			"font-weight":"100",
+			      			"font-size":"14px",
+			      			"border-radius":"3px"
+			      		}}
+			      		className="btn btn-lg btn-primary"
+			      		href="/login/github"
+			      		role="button"
+			      		onClick={this.signIn}
+			      	>
+			      		Sign in with Github
+			      	</a>
+			      </p>
+			    </div>
+			  </div>
+			</div>
+			<div className = "container" >
+				<div
+		  		className = "jumbotron"
+		  		style = {{
+		  			"background-color":"#fff"
 		  		}}
-		  	>
-		      <h1 style={{"font-size":"36px"}}>Let's voting!</h1>
-		      <p className="lead">
-						This voting app is built by @elevenbeans, 
-						following the instructions of "Build a Voting App | Free Code Camp". <br />
-						Github Name: elevenBeans
-					</p>
-		      <p>
-		      	<a
-		      		style={{
-		      			"font-weight":"100",
-		      			"font-size":"14px",
-		      			"border-radius":"3px"
-		      		}}
-		      		className="btn btn-lg btn-primary"
-		      		href="/login/github"
-		      		role="button"
-		      		onClick={this.signIn}
-		      	>
-		      		Sign in with Github
-		      	</a>
-
-		      	
-		      </p>
-		      </div>
-		  </div>
+			  >
+					<hr />
+					<footer>
+		        <p
+		        	style = {{"font-size":"14px"}}>
+				  		© 2016 elevenbeans.
+				  	</p>
+		      </footer>
+	      </div>
+	    </div>
+      </div>
   	)
   }
 }
