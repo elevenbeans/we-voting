@@ -35,7 +35,8 @@ class Home extends Component {
 		  <div className="container" style={{"text-align":"center"}}> 
 		  	<div
 		  		className="jumbotron"
-		  		style={{"background-color":"#fff",
+		  		style={{
+		  			"background-color":"#fff",
 		  			"box-shadow": "0 1px 2px rgba(0,0,0,.1)",
 		  			"border-radius":"3px"
 		  		}}
@@ -48,7 +49,11 @@ class Home extends Component {
 					</p>
 		      <p>
 		      	<a
-		      		style={{"font-weight":"100","font-size":"14px","border-radius":"3px"}}
+		      		style={{
+		      			"font-weight":"100",
+		      			"font-size":"14px",
+		      			"border-radius":"3px"
+		      		}}
 		      		className="btn btn-lg btn-primary"
 		      		href="/login/github"
 		      		role="button"
