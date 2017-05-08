@@ -1,30 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimal-ui" />
 <title>Let's Vote</title>
 <link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 <script src="//cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
 <script type="text/javascript" src="//cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
 <style>
-html, body{
-	height:100%;
-}
+
 a:hover{
 	text-decoration: none;
 }
-#app, #app>div{
-	height:100%;
-}
 .transition-wrapper{
 	position: relative;
-	height:100%;
+	text-align: center;
 }
-.transition-wrapper > div{
+
+.transition-wrapper .homepage,
+.transition-wrapper .listpage,
+.transition-wrapper .detailpage{
+	width: 100%;
   position: absolute;
-  width: 100%;
-  height:100%;
+}
+.transition-wrapper .listpage,
+.transition-wrapper .detailpage{
+	margin: 2%;
+  width: 96%;
 }
 .navbar{
 	border-radius: 0px;
@@ -33,4 +34,6 @@ a:hover{
 	border-bottom: 3px;
 }
 </style>
+</head>
+
 <body>

@@ -1,7 +1,5 @@
 /***
 To do List:
-+ opt code
-+ err throw
 + Orgnize Router
 + set login statue in cookie
 + verify when create a new poll
@@ -67,10 +65,18 @@ app.get("/login/github/callback", function(req, resp){
 app.get("/login/github", function(req, resp){
   var dataStr = (new Date()).valueOf();
   var path = "https://github.com/login/oauth/authorize";
-  path += '?client_id='+CLIENT_ID;
+  path += '?client_id='+ CLIENT_ID;
   path += '&scope=repo,gist';
   path += '&state='+ dataStr;
   resp.redirect(path);
+});
+
+app.get('/detail', function(request, response) {
+  response.render('index',{cdnUrl: CDN_URL});
+});
+
+app.get('/list', function(request, response) {
+  response.render('index',{cdnUrl: CDN_URL});
 });
 
 app.get('/', function(request, response) {

@@ -3,6 +3,8 @@
 import React from 'react';
 import { Component } from 'react';
 
+import Footer from './components/footer';
+
 class Detail extends Component {
 
 	constructor(props) {
@@ -10,8 +12,9 @@ class Detail extends Component {
   }
   render() {
     return (
-			<div>
-detail~
+			<div className = "detailpage">
+				detail page~
+				<Footer />
 			</div>
     );
   }

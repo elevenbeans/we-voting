@@ -9,6 +9,7 @@ import { RouteTransition, presets } from 'react-router-transition';
 
 import Home from './home';
 import Header from './components/header';
+
 import Detail from './detail';
 // import FlightList from 'flightlist';
 import List from './list';
@@ -22,7 +23,6 @@ var styles = presets.slideLeft;
 
 var App = function({ children, location }) {
   styles = location.action === 'POP' ? presets.slideRight : presets.slideLeft;
-  // console.log(location.action);
   return (
   <div>
     <Header />
@@ -33,7 +33,6 @@ var App = function({ children, location }) {
       {...styles}>
       {children}
     </RouteTransition>
-
   </div>
   );
 };
