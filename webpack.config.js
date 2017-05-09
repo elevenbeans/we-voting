@@ -3,9 +3,9 @@ var path = require('path');
 
 var CDN_URL = '';
 var EXTERNALS = { // dev 这里应该不加 react 和 react-dom 的 external, build 要加
-      'react':'window.React',
-      'react-dom':'window.ReactDOM'
-    };
+  'react':'window.React',
+  'react-dom':'window.ReactDOM'
+};
 
 console.log('process.env.NODE_ENV in webpack config::::',process.env.NODE_ENV);
 
@@ -25,7 +25,7 @@ var config = {
     router: ['react-router'] // CommonsChunkPlugin
   },
   output: {
-    path: './dist',
+    path: path.resolve(__dirname, './dist'),
     publicPath: CDN_URL + "/dist/", //静态资源文件内的请求路径指向静态资源服务器
     filename: '[name].bundle.js'
   },

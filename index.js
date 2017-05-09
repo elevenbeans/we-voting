@@ -1,22 +1,43 @@
 /***
+
 To do List:
 + Orgnize Router
-+ set login statue in cookie
-+ verify when create a new poll
++ handle login: show login page, set login statue in cookie
++ create new user item in user db by github names
++ create poll db
++ verify user login status when create a new poll
+
 **/
 
 var express = require('express');
 var app = express();
 var request = require('request');
+var webpack = require('webpack');
 
-app.set('port', (process.env.PORT || 5000));
+var webpackMiddleware = require("webpack-dev-middleware");
 
-app.use(express.static(__dirname + '/'));
+var webpackConfig = require("./webpack.config");
 
 var	CDN_URL = 'http://localhost:8088';
 var	REDIRECT_URI = 'http://localhost:5000/login/github/callback';
 var CLIENT_ID = '411b91fde0088b2efa2a';
 var CLIENT_SECRET = '1aef5524c34d0f11c2441e1dce2af8afa7d39ee1';
+
+app.set('port', (process.env.PORT || 5000));
+
+// views is directory for all template files
+app.set('views', __dirname + '/views');
+app.set('view engine', 'ejs');
+
+app.use(webpackMiddleware(webpack(webpackConfig), {
+	
+	headers: { "Access-Control-Allow-Origin": "*"},
+	// custom headers
+
+}));
+
+app.use(express.static(__dirname + '/'));
+
 
 if(!process.env.NODE_ENV) {process.env.NODE_ENV = 'dev-HMR';}
 
@@ -28,10 +49,6 @@ if(process.env.NODE_ENV === 'production') {
 	CLIENT_ID = '7d6b761d11f8d943d54f';
 	CLIENT_SECRET = '94e24dac049b6c7b3cdd754db23d6ba24a33e455';
 }
-
-// views is directory for all template files
-app.set('views', __dirname + '/views');
-app.set('view engine', 'ejs');
 
 app.get("/login/github/callback", function(req, resp){
 	request(
