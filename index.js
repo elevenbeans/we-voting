@@ -1,8 +1,7 @@
 /***
 
 To do List:
-+ handle login: show login page, set login statue in cookie
-+ create new user item in user db by github names
++ create new user in user db by github id when login
 + create poll db
 + verify user login status when create a new poll
 

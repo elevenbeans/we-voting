@@ -10,6 +10,7 @@ class Header extends Component {
     super(props);
   }
   render() {
+  	var _imgUrl = appInfo.avatar
     return (
 			<div>
 				<nav className="navbar navbar-inverse" style={{"margin-bottom": "1px"}}>
@@ -33,6 +34,11 @@ class Header extends Component {
 			   
 			      </ul>
 			      <ul className="nav navbar-nav navbar-right">
+			        <li>
+			        	<a>
+			            	{appInfo.userName?appInfo.userName:''}
+			        	</a>
+			       	</li>
 			        <li className="dropdown">
 			          <a href="#" className="dropdown-toggle"
 			          	data-toggle="dropdown"
@@ -43,11 +49,19 @@ class Header extends Component {
 			          		<span className = "caret"></span>
 			          </a>
 			          <ul className="dropdown-menu">
-			            <li><a href="#">Sign in</a></li>
-			            <li><a href="#">Setting</a></li>
+			            <li>
+			            	<a href="/login/github">
+			            	{appInfo.userName?'':'Sign in'}
+			            	</a>
+			            </li>
+			            {appInfo.userName && <li><a href="#">Setting</a></li>}
 			            <li role="separator" className="divider"></li>
-			            <li><a href="#">About me</a></li>
-			            <li><a href="#">Sign out</a></li>
+			            <li>
+			            	<a href="http://bin11.cn" target="_blank">
+			            		About author
+			            	</a>
+			            </li>
+			            {appInfo.userName && <li><a href="#">Sign out</a></li>}
 			          </ul>
 			        </li>
 			      </ul>

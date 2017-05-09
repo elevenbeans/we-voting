@@ -37,8 +37,16 @@ router.get('/github/callback', function(req, resp){
 					}
 				},
 				function(error, res, data){
-		 			// res.send('login success');
-		 			resp.send(data);
+		 			// resp.send(data);
+		 			// console.log(data);
+		 			data = JSON.parse(data);
+		 			// resp.render('index', {cdnUrl: config.CDN_URL});
+		 			resp.cookie('userName', data.name);
+		 			resp.cookie('email', data.email);
+		 			resp.cookie('avatar', data.avatar_url);
+
+		 			resp.redirect('/');
+
 				}
 			);
 		}
