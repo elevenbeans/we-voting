@@ -1,7 +1,8 @@
 /***
 
 To do List:
-+ create new user in user db by github id when login
++ logout
++ create new user in user db by github ids when login
 + create poll db
 + verify user login status when create a new poll
 

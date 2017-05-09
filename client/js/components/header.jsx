@@ -36,7 +36,13 @@ class Header extends Component {
 			      <ul className="nav navbar-nav navbar-right">
 			        <li>
 			        	<a>
-			            	{appInfo.userName?appInfo.userName:''}
+				        	{appInfo.userName &&
+				        		<img
+				        		src={appInfo.avatar}
+				        		width="20px"
+				        		style={{"border-radius":"3px"}}
+				        		/>
+				        	}
 			        	</a>
 			       	</li>
 			        <li className="dropdown">
@@ -51,7 +57,7 @@ class Header extends Component {
 			          <ul className="dropdown-menu">
 			            <li>
 			            	<a href="/login/github">
-			            	{appInfo.userName?'':'Sign in'}
+			            	{appInfo.userName?appInfo.userName:'Sign in'}
 			            	</a>
 			            </li>
 			            {appInfo.userName && <li><a href="#">Setting</a></li>}
