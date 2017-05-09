@@ -15,16 +15,27 @@ router.use(function timeLog(req, res, next) {
   next();
 });
 
-router.get('/detail', function(request, response) {
-  response.render('index', {cdnUrl: config.CDN_URL});
-});
+router.get('/detail', throwToHome);
 
-router.get('/list', function(request, response) {
-  response.render('index', {cdnUrl: config.CDN_URL});
-});
+router.get('/list', throwToHome);
 
-router.get('/', function(request, response) {
-  response.render('index', {cdnUrl: config.CDN_URL});
-});
+router.get('/', throwToHome);
+
+router.get('*', throwToError);
+
+function throwToHome(request, response){
+  response.render('index',
+  	{
+  		cdnUrl: config.CDN_URL
+  	}
+  );
+}
+function throwToError(request, response){
+  response.render('error',
+  	{
+  		cdnUrl: config.CDN_URL
+  	}
+  );
+}
 
 module.exports = router;

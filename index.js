@@ -31,8 +31,8 @@ app.set('view engine', 'ejs');
 
 app.use(express.static(__dirname + '/'));
 
-app.use('/', view);
 app.use('/login', login);
+app.use('/', view);
 
 if(!process.env.NODE_ENV) {process.env.NODE_ENV = 'dev-HMR';}
 
