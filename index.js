@@ -1,7 +1,6 @@
 /***
 
 To do List:
-+ Orgnize Router
 + handle login: show login page, set login statue in cookie
 + create new user item in user db by github names
 + create poll db
@@ -12,7 +11,7 @@ To do List:
 var express = require('express');
 var app = express();
 
-var index = require('./router/view');
+var view = require('./router/view');
 var login = require('./router/login');
 
 // var webpack = require('webpack');
@@ -32,7 +31,7 @@ app.set('view engine', 'ejs');
 
 app.use(express.static(__dirname + '/'));
 
-app.use('/', index);
+app.use('/', view);
 app.use('/login', login);
 
 if(!process.env.NODE_ENV) {process.env.NODE_ENV = 'dev-HMR';}

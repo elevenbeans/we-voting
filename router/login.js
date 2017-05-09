@@ -6,7 +6,7 @@ var serverConf = require('../serverConfig');
 
 var config = serverConf.devConfig;
 
-console.log('process.env.NODE_ENV in webpack config::::',process.env.NODE_ENV);
+console.log('process.env.NODE_ENV in login config::::',process.env.NODE_ENV);
 
 if(process.env.NODE_ENV === 'production') config = serverConf.prdConfig;
 
@@ -16,10 +16,11 @@ router.use(function timeLog(req, res, next) {
   next();
 });
 
-router.get("/github/callback", function(req, resp){
+router.get('/github/callback', function(req, resp){
 	request(
 		{
-			url:'https://github.com/login/oauth/access_token',
+			// url:'https://github.com/login/oauth/access_token',
+			url: config.GITHUB_API.ACCESS_TOKEN,
 			form: {
 				client_id: config.CLIENT_ID,
 				client_secret: config.CLIENT_SECRET,
@@ -31,7 +32,8 @@ router.get("/github/callback", function(req, resp){
 		function(err, response, body){
 			request(
 				{
-					url:'https://api.github.com/user?' + body,
+					// url:'https://api.github.com/user?' + body,
+					url: config.GITHUB_API.USER_INFO + '?' + body,
 				  headers: {
 						'User-Agent': 'request'
 					}
@@ -45,9 +47,10 @@ router.get("/github/callback", function(req, resp){
 	);
 })
 
-router.get("/github", function(req, resp){
+router.get('/github', function(req, resp){
   var dataStr = (new Date()).valueOf();
-  var path = "https://github.com/login/oauth/authorize";
+  // var path = "https://github.com/login/oauth/authorize";
+  var path = config.GITHUB_API.AUTHORIZE;
   path += '?client_id='+ config.CLIENT_ID;
   path += '&scope=repo,gist';
   path += '&state='+ dataStr;

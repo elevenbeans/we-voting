@@ -5,7 +5,7 @@ var serverConf = require('../serverConfig');
 
 var config = serverConf.devConfig;
 
-console.log('process.env.NODE_ENV in webpack config::::',process.env.NODE_ENV);
+console.log('process.env.NODE_ENV in view config::::',process.env.NODE_ENV);
 
 if(process.env.NODE_ENV === 'production') config = serverConf.prdConfig;
 
