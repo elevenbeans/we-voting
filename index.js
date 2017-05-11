@@ -2,6 +2,7 @@
 
 To do List:
 
++ finish detail UI
 + create poll db
 	|-- pollID (number)
 	|-- title (str)

@@ -46,6 +46,11 @@ class Header extends Component {
 			        </li>
 			   			{appInfo.name &&
 			   				<li>
+			      			<Link to = {"/list/" + appInfo.name}>My Polls</Link>
+			        	</li>
+			       	}
+			   			{appInfo.name &&
+			   				<li>
 			      			<Link to = "/new">New Polls</Link>
 			        	</li>
 			       	}
@@ -77,7 +82,11 @@ class Header extends Component {
 			            	{appInfo.name?appInfo.name:'Sign in'}
 			            	</a>
 			            </li>
-			            {appInfo.name && <li><a href="#"> Setting </a></li>}
+			            <li>
+			            	<a href="https://github.com/elevenBeans/WeVoting" target="_blank">
+			            		Github resposity
+			            	</a>
+			            </li>
 			            <li role="separator" className="divider"></li>
 			            <li>
 			            	<a href="http://bin11.cn" target="_blank">

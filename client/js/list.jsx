@@ -9,6 +9,9 @@ class List extends Component {
 	constructor(props) {
     super(props);
   }
+  componentDidMount(){
+		console.log(this.props.params.name);
+  }
   render() {
     return (
 			<div className = "listpage">

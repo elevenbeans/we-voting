@@ -15,6 +15,7 @@ router.use(function timeLog(req, res, next) {
 });
 
 router.get('/detail', throwToHome);
+router.get('/list/:name', throwToHome);
 router.get('/list', throwToHome);
 router.get('/new', throwToHome);
 

@@ -13,16 +13,16 @@ var DBhander = {};
 function queryUser(id, sucCal, errCal){
 	// 根据用户名查询用户信息, 回调中返回信息; 查询失败则回调返回 err
 	mongo.connect(dbUrl, function(err, db){
-	   var userList = db.collection('userList');
-	   userList.find({_id:id},{}).toArray(function(err, docs){
-	      if(err) {
-	        db.close();
-	        errCal(err);
-	      } else {
-	        db.close();
-        	sucCal(docs);
-	      }
-	   });
+	  var userList = db.collection('userList');
+	  userList.find({_id:id},{}).toArray(function(err, docs){
+			if(err) {
+				db.close();
+				errCal(err);
+			} else {
+				db.close();
+				sucCal(docs);
+			}
+	  });
 	});		
 }
 
@@ -68,31 +68,31 @@ DBhander.insertUser = function(obj, sucCal, errCal){
 
 DBhander.queryPolls = function(id, sucCal, errCal) { // 根据用户 id 查询 poll
 	mongo.connect(dbUrl,function(err, db){
-	   var pullList = db.collection('pollList');
-	   pullList.find({_id: id},{}).sort({timestamp: -1}).toArray(function(err, docs){
-	      if(err){
-	      	db.close();
-	      	errCal(err);
-	      } else {
-	      	db.close();
-	      	sucCal(docs);
-	      }
-	   });
+	  var pullList = db.collection('pollList');
+	  pullList.find({_id: id},{}).sort({timestamp: -1}).toArray(function(err, docs){
+      if(err){
+      	db.close();
+      	errCal(err);
+      } else {
+      	db.close();
+      	sucCal(docs);
+      }
+	  });
 	});		
 },
 
 DBhander.updatePolls = function(id, sucCal, errCal) { // 根据用户 id 查询 poll
 	mongo.connect(dbUrl,function(err, db){
-	   var pullList = db.collection('pollList');
-	   pullList.update({_id: id},{}).sort({timestamp: -1}).toArray(function(err, docs){
-	      if(err){
-	      	db.close();
-	      	errCal(err);
-	      } else {
-	      	db.close();
-	      	sucCal(docs);
-	      }
-	   });
+	  var pullList = db.collection('pollList');
+	  pullList.update({_id: id},{}).sort({timestamp: -1}).toArray(function(err, docs){
+      if(err){
+      	db.close();
+      	errCal(err);
+      } else {
+      	db.close();
+      	sucCal(docs);
+      }
+	  });
 	});		
 },
 
