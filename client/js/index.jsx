@@ -13,7 +13,8 @@ import Header from './components/header';
 import Detail from './detail';
 // import FlightList from 'flightlist';
 import List from './list';
-// import Hotel from 'hotel';
+
+import New from './new';
 
 if (module.hot && process.env.NODE_ENV === 'dev-HMR') module.hot.accept();
 
@@ -45,6 +46,9 @@ render((<Router key={Math.random()} history={browserHistory} >
             </Route>
             
             <Route path="detail" component={Detail}>
+            </Route>
+
+            <Route path="new" component={New}>
             </Route>
 
           </Route>

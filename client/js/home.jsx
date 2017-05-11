@@ -52,7 +52,7 @@ class Home extends Component {
 			      				"border-radius":"3px"
 			      			}}
 			      			className="btn btn-lg btn-primary"
-			      			to = "/detail"
+			      			to = "/new"
 			      			role="button"
 			      		>
 			      			Add a new poll >>
