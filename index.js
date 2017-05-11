@@ -23,6 +23,8 @@ To do List:
 var express = require('express');
 var app = express();
 
+var compression = require('compression');
+
 var view = require('./controller/router/view');
 var login = require('./controller/router/login');
 
@@ -32,6 +34,7 @@ app.set('port', (process.env.PORT || 5000));
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
+app.use(compression());
 
 app.use(express.static(__dirname + '/'));
 
