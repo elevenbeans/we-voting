@@ -3,14 +3,16 @@
 To do List:
 
 + create poll db
+	|-- title (str)
+	|-- description (str)
+  |-- options (array)
+  	|-- optionsCtx (str)
+  	|-- count (mumber)
+  	|-- index (number)
+	|-- owner (number)
 
-|-- title
-  |-- description
-  |-- positive
-  |-- negtive
-  |-- other
-  
 + verify user login status when create a new poll
++ verify user login status when voting
 
 **/
 

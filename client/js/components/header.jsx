@@ -44,7 +44,11 @@ class Header extends Component {
 			        <li>
 			      		<Link to = "/list">All Polls</Link>
 			        </li>
-			   
+			   			{appInfo.name &&
+			   				<li>
+			      			<Link to = "/list">New Polls</Link>
+			        	</li>
+			       	}
 			      </ul>
 			      <ul className="nav navbar-nav navbar-right">
 			        <li>

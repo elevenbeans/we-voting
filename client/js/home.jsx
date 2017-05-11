@@ -43,6 +43,21 @@ class Home extends Component {
 			      			Sign in with Github
 			      		</a>
 			      	</p>}
+			      	{appInfo.name &&
+			      		<p>
+			      		<Link
+			      			style={{
+			      				"font-weight":"100",
+			      				"font-size":"14px",
+			      				"border-radius":"3px"
+			      			}}
+			      			className="btn btn-lg btn-primary"
+			      			to = "/detail"
+			      			role="button"
+			      		>
+			      			Add a new poll >>
+			      		</Link>
+			      	</p>}
 			    	</div>
 			  	</div>
 				</div>
