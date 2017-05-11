@@ -15,8 +15,8 @@ class New extends Component {
   }
   componentDidMount() {
     if(!appInfo.name){
-      // 不支持未登陆 landing, 滚去登陆!
-      location.href = location.origin + '/login/github';
+      // 不支持未登陆 landing, 滚去首页!
+      location.href = location.origin;
     }
   }
   addOptions(){
@@ -30,7 +30,7 @@ class New extends Component {
 
   }
   submitPollData(){
-    
+
   }
   render() {
     return (
