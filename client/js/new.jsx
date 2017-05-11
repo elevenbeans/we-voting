@@ -12,7 +12,7 @@ class New extends Component {
   }
   componentDidMount() {
     if(!appInfo.name){
-       location.href = location.origin + '/login/github'; // 不支持 landing! 滚去登陆
+      location.href = location.origin + '/login/github'; // 不支持 landing! 滚去登陆
     }
   }
   render() {
