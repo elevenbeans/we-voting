@@ -65,10 +65,10 @@ DBhander.insertUser = function(obj, sucCal, errCal){ // 插入一条新用户 �
 	})
 }
 
-DBhander.queryPoll = function(str, sucCal, errCal) { // 根据用户名查询 poll
+DBhander.queryPoll = function(id, sucCal, errCal) { // 根据用户 id 查询 poll
 	mongo.connect(dbUrl,function(err, db){
 	   var pullList = db.collection('pollList');
-	   pullList.find({},{_id: str}).sort({timestamp: -1}).toArray(function(err, docs){
+	   pullList.find({_id: id},{}).sort({timestamp: -1}).toArray(function(err, docs){
 	      if(err){
 	      	db.close();
 	      	errCal(err);
@@ -83,7 +83,7 @@ DBhander.queryPoll = function(str, sucCal, errCal) { // 根据用户名查询 po
 DBhander.queryAllPoll = function(sucCal, errCal){ // 查询所有 poll
 	mongo.connect(dbUrl,function(err, db){
 	   var pullList = db.collection('pollList');
-	   pullList.find({},{}).toArray(function(err, docs){
+	   pullList.find({},{}).sort({timestamp: -1}).toArray(function(err, docs){
 	      if(err){
 	        db.close();
 	        errCal(err);

@@ -27,7 +27,7 @@ class Home extends Component {
 								following the instructions of "Build a Voting App | Free Code Camp". <br />
 								Github Name: elevenBeans
 							</p>
-			      	{!appInfo.userName &&
+			      	{!appInfo.name &&
 			      		<p>
 			      		<a
 			      			style={{

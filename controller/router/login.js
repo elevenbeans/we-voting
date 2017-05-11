@@ -41,10 +41,15 @@ router.get('/github/callback', function(req, resp){
 				function(error, res, data){
 					// get usrInfo
 		 			data = JSON.parse(data);
-		 			resp.cookie('id', data.id);
-		 			resp.cookie('userName', data.name);
-		 			resp.cookie('email', data.email);
-		 			resp.cookie('avatar', data.avatar_url);
+		 			function toBase64(str){
+		 				if(typeof(str) !== 'string') str = str + '';
+		 				var _temp = new Buffer(str);
+		 				return _temp.toString('base64');
+		 			}
+		 			resp.cookie('id', toBase64(data.id));
+		 			resp.cookie('name', toBase64(data.name));
+		 			resp.cookie('email', toBase64(data.email));
+		 			resp.cookie('avatar', toBase64(data.avatar_url));
 
 					dbhandler.insertUser(data,
 						function(data){

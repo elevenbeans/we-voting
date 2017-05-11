@@ -4,7 +4,7 @@ import React from 'react';
 import { Component } from 'react';
 import { Link } from 'react-router';
 
-import { getCookie, setCookie} from '../lib/utils';
+import { getCookie, setCookie, base64} from '../lib/utils';
 
 class Header extends Component {
 
@@ -12,12 +12,14 @@ class Header extends Component {
     super(props);
   }
   componentWillMount() {
-  	appInfo.userName = getCookie('userName');
-  	appInfo.avatar = getCookie('avatar');
+  	appInfo.name = base64.decode(getCookie('name'));
+  	appInfo.avatar = base64.decode(getCookie('avatar'));
   }
   signOut() {
-  	setCookie('userName','');
+  	setCookie('name','');
   	setCookie('avatar','');
+  	setCookie('id','');
+  	setCookie('email','');
   	location.reload();
   }
   render() {
@@ -47,7 +49,7 @@ class Header extends Component {
 			      <ul className="nav navbar-nav navbar-right">
 			        <li>
 			        	<a>
-				        	{appInfo.userName &&
+				        	{appInfo.name &&
 				        		<img
 				        		src={appInfo.avatar}
 				        		width="20px"
@@ -68,17 +70,17 @@ class Header extends Component {
 			          <ul className="dropdown-menu">
 			            <li>
 			            	<a href="/login/github">
-			            	{appInfo.userName?appInfo.userName:'Sign in'}
+			            	{appInfo.name?appInfo.name:'Sign in'}
 			            	</a>
 			            </li>
-			            {appInfo.userName && <li><a href="#"> Setting </a></li>}
+			            {appInfo.name && <li><a href="#"> Setting </a></li>}
 			            <li role="separator" className="divider"></li>
 			            <li>
 			            	<a href="http://bin11.cn" target="_blank">
 			            		About author
 			            	</a>
 			            </li>
-			            {appInfo.userName &&
+			            {appInfo.name &&
 			            	<li><a href = "#" onClick={this.signOut} > Sign out </a></li>
 			            }
 			          </ul>

@@ -3,6 +3,13 @@
 To do List:
 
 + create poll db
+
+|-- title
+  |-- description
+  |-- positive
+  |-- negtive
+  |-- other
+  
 + verify user login status when create a new poll
 
 **/
