@@ -4,10 +4,21 @@ import React from 'react';
 import { Component } from 'react';
 import { Link } from 'react-router';
 
+import { getCookie, setCookie} from '../lib/utils';
+
 class Header extends Component {
 
 	constructor(props) {
     super(props);
+  }
+  componentWillMount() {
+  	appInfo.userName = getCookie('userName');
+  	appInfo.avatar = getCookie('avatar');
+  }
+  signOut() {
+  	setCookie('userName','');
+  	setCookie('avatar','');
+  	location.reload();
   }
   render() {
   	var _imgUrl = appInfo.avatar
@@ -60,14 +71,16 @@ class Header extends Component {
 			            	{appInfo.userName?appInfo.userName:'Sign in'}
 			            	</a>
 			            </li>
-			            {appInfo.userName && <li><a href="#">Setting</a></li>}
+			            {appInfo.userName && <li><a href="#"> Setting </a></li>}
 			            <li role="separator" className="divider"></li>
 			            <li>
 			            	<a href="http://bin11.cn" target="_blank">
 			            		About author
 			            	</a>
 			            </li>
-			            {appInfo.userName && <li><a href="#">Sign out</a></li>}
+			            {appInfo.userName &&
+			            	<li><a href = "#" onClick={this.signOut} > Sign out </a></li>
+			            }
 			          </ul>
 			        </li>
 			      </ul>

@@ -1,8 +1,7 @@
 /***
 
 To do List:
-+ logout
-+ create new user in user db by github ids when login
+
 + create poll db
 + verify user login status when create a new poll
 
@@ -11,12 +10,8 @@ To do List:
 var express = require('express');
 var app = express();
 
-var view = require('./router/view');
-var login = require('./router/login');
-
-// var webpack = require('webpack');
-// var webpackMiddleware = require("webpack-dev-middleware");
-// var webpackConfig = require('./webpack.config');
+var view = require('./controller/router/view');
+var login = require('./controller/router/login');
 
 app.set('port', (process.env.PORT || 5000));
 
@@ -24,10 +19,6 @@ app.set('port', (process.env.PORT || 5000));
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
-// app.use(webpackMiddleware(webpack(webpackConfig), {
-// 	headers: { "Access-Control-Allow-Origin": "*"},
-// 	// custom headers
-// }));
 
 app.use(express.static(__dirname + '/'));
 

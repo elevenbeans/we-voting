@@ -1,8 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-var serverConf = require('../serverConfig');
-
+var serverConf = require('../../serverConfig');
 var config = serverConf.devConfig;
 
 console.log('process.env.NODE_ENV in view config::::',process.env.NODE_ENV);
@@ -16,9 +15,7 @@ router.use(function timeLog(req, res, next) {
 });
 
 router.get('/detail', throwToHome);
-
 router.get('/list', throwToHome);
-
 router.get('/', throwToHome);
 
 router.get('*', throwToError);

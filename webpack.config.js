@@ -69,7 +69,8 @@ var config = {
   },
   devServer:{
     hot: process.env.NODE_ENV === 'dev-HMR',
-    inline:true
+    inline: true,
+    headers: { "Access-Control-Allow-Origin": "*" }
   }
 }
 

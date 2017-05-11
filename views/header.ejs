@@ -38,19 +38,10 @@ a:hover{
 
 <body>
 <script type="text/javascript">
+
 	var appInfo = {
-		userName: getCookie('userName'),
-		avatar:getCookie('avatar')
+		userName: '',
+		avatar: ''
 	}
 
-	function getCookie(cname) {
-    var name = cname + "=";
-    var ca = decodeURIComponent(document.cookie).split(';');
-    for(var i = 0; i < ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0)==' ') c = c.substring(1);
-        if (c.indexOf(name) != -1) return c.substring(name.length, c.length);
-    }
-    return "";
-	}
 </script>

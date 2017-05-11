@@ -1,10 +1,12 @@
 var express = require('express');
 var router = express.Router();
+
 var request = require('request');
 
-var serverConf = require('../serverConfig');
-
+var serverConf = require('../../serverConfig');
 var config = serverConf.devConfig;
+
+var dbhandler = require('../DBhandler');
 
 console.log('process.env.NODE_ENV in login config::::',process.env.NODE_ENV);
 
@@ -37,15 +39,25 @@ router.get('/github/callback', function(req, resp){
 					}
 				},
 				function(error, res, data){
-		 			// resp.send(data);
-		 			// console.log(data);
+					// get usrInfo
 		 			data = JSON.parse(data);
-		 			// resp.render('index', {cdnUrl: config.CDN_URL});
+		 			resp.cookie('id', data.id);
 		 			resp.cookie('userName', data.name);
 		 			resp.cookie('email', data.email);
 		 			resp.cookie('avatar', data.avatar_url);
 
-		 			resp.redirect('/');
+					dbhandler.insertUser(data,
+						function(data){
+		 					resp.redirect('/');
+						},
+						function(err){
+							if(err === 'EXIST_USER') {
+								resp.redirect('/');
+							} else {
+								resp.send(err);
+							}
+						}
+					);
 
 				}
 			);
