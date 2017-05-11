@@ -63,7 +63,6 @@ router.get('/github/callback', function(req, resp){
 							}
 						}
 					);
-
 				}
 			);
 		}

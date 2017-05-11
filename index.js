@@ -3,15 +3,18 @@
 To do List:
 
 + create poll db
+	|-- pollID (number)
 	|-- title (str)
 	|-- description (str)
   |-- options (array)
   	|-- optionsCtx (str)
   	|-- count (mumber)
-  	|-- index (number)
 	|-- owner (number)
 
-+ verify user login status when create a new poll
++ API
+	|-- GetAllPolls || GetPollsByUserID
+	|-- voteByPollIDAndOptionIndex
+
 + verify user login status when voting
 
 **/

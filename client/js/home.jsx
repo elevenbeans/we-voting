@@ -24,7 +24,7 @@ class Home extends Component {
 			      	<h1 style={{"font-size":"36px"}}>Let's voting!</h1>
 			      	<p className="lead">
 								This voting app is built by @elevenbeans, 
-								following the instructions of "Build a Voting App | Free Code Camp". <br />
+								following the instructions of "Build a Voting App | Free Code Camp".<br />
 								Github Name: elevenBeans
 							</p>
 			      	{!appInfo.name &&
@@ -55,7 +55,7 @@ class Home extends Component {
 			      			to = "/new"
 			      			role="button"
 			      		>
-			      			Add a new poll >>
+			      			Create a new poll >>
 			      		</Link>
 			      	</p>}
 			    	</div>
@@ -66,7 +66,9 @@ class Home extends Component {
 		      <div className="row">
 		        <div className="col-md-12">
 		          <h2>View more polls?</h2>
-		          <p className = "lead">You can select a poll to see the results and vote, or sign-in to make a new poll.</p>
+		          <p className = "lead">
+		          	You can select a poll to see the results and vote, or sign-in to make a new poll.
+		          </p>
 		          <p>
 		          	<Link className="btn btn-default" to="/list" role="button">
 		          		View all polls »
