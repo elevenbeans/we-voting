@@ -20,7 +20,7 @@ if(process.env.NODE_ENV === 'production') CDN_URL = './';
 var config = {
   entry: {
     vote: [
-      './client/js/index.jsx'
+      './client/index.jsx'
     ],
     router: ['react-router'] // CommonsChunkPlugin
   },
@@ -37,7 +37,7 @@ var config = {
         //exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
-          presets: ['react','es2015']
+          presets: ['react', 'es2015']
         }
       }
     ]

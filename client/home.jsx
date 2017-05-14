@@ -27,7 +27,7 @@ class Home extends Component {
 								following the instructions of "Build a Voting App | Free Code Camp".<br />
 								Github Name: elevenBeans
 							</p>
-			      	{!appInfo.name &&
+			      	{!userInfo.name &&
 			      		<p>
 			      		<a
 			      			style={{
@@ -43,7 +43,7 @@ class Home extends Component {
 			      			Sign in with Github
 			      		</a>
 			      	</p>}
-			      	{appInfo.name &&
+			      	{userInfo.name &&
 			      		<p>
 			      		<Link
 			      			style={{

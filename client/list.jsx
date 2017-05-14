@@ -9,7 +9,7 @@ class List extends Component {
 	constructor(props) {
     super(props);
   }
-  componentDidMount(){
+  componentDidMount() {
 		console.log(this.props.params.name);
   }
   render() {

@@ -7,7 +7,6 @@ var dbUrl = serverConf.devConfig.DB_URL;
 
 if(process.env.NODE_ENV === 'production') dbUrl = serverConf.prdConfig.DB_URL;
 
-
 var DBhander = {};
 
 function queryUser(id, sucCal, errCal){

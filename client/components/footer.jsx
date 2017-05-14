@@ -4,7 +4,7 @@ const Footer = () => (
 			<footer>
         <p
         	style = {{"font-size":"14px"}}>
-		  		© 2016 &nbsp;
+		  		© 2017 &nbsp;
 		  		<a href = "https://github.com/elevenBeans" target="_blank">
 		  			@elevenbeans
 		  		</a>

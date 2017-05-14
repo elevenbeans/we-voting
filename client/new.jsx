@@ -10,24 +10,37 @@ class New extends Component {
 	constructor(props) {
     super(props);
     this.state = {
-      options: []
+      options: [
+        'Like ...',
+        'Dislike ...',
+        'Do not matter ...'
+      ]
     }
   }
   componentDidMount() {
-    if(!appInfo.name){
+    if(!userInfo.name){
       // 不支持未登陆 landing, 滚去首页!
       location.href = location.origin;
     }
   }
   addOptions(){
-    var temp = this.state.options;
-    temp.push($('#poll-option').val());
+    var _temp = this.state.options;
+    _temp.push($('#poll-option').val());
 
     this.setState({
-      options: temp
+      options: _temp
     });
     $('#poll-option').val('');
-
+  }
+  deleteOptions(e){
+    var _index = $(e.target).attr('data-index');
+    var _temp = this.state.options;
+    _temp = _temp.filter(function(item, index){
+      return index !== ~~_index;
+    });
+    this.setState({
+      options: _temp
+    });
   }
   submitPollData(){
 
@@ -71,10 +84,26 @@ class New extends Component {
         >
           Options:
         </span> 
-        <ul className="list-group">
+        <ul className="list-group" style={{"line-height": "34px"}}>
           {this.state.options.map(
-            (item)=>(
-              <li className="list-group-item">{item}</li>
+            (item, index)=>(
+              <li
+                className="list-group-item"
+              >            
+                <div className="input-group">
+                  {item}
+                  <span className="input-group-btn">
+                    <button
+                      className="btn btn-danger"
+                      type="button"
+                      onClick={this.deleteOptions.bind(this)}
+                      data-index={index}
+                    >
+                      Delete
+                    </button>
+                  </span>
+                </div>
+              </li>
             )
           )}
           {this.state.options.length === 0?<li className="list-group-item">To be added ...</li>:''}
@@ -86,7 +115,7 @@ class New extends Component {
                 type = "text"
                 className="form-control"
                 id = "poll-option"
-                placeholder="Write your options and click the button..."
+                placeholder="Write your options and click the add button..."
                 name = "option"
               />
               <span className="input-group-btn">

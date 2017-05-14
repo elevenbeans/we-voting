@@ -2,7 +2,6 @@
 
 To do List:
 
-+ finish detail UI
 + create poll db
 	|-- pollID (number)
 	|-- title (str)
@@ -10,10 +9,10 @@ To do List:
   |-- options (array)
   	|-- optionsCtx (str)
   	|-- count (mumber)
-	|-- owner (number)
+	|-- UserID/OwnerID (number)
 
 + API
-	|-- GetAllPolls || GetPollsByUserID
+	|-- GetAllPolls || GetPollsByID || GetPollsByOwnerID
 	|-- voteByPollIDAndOptionIndex
 
 + verify user login status when voting
@@ -43,7 +42,6 @@ app.use('/', view);
 
 if(!process.env.NODE_ENV) {process.env.NODE_ENV = 'dev-HMR';}
 
- 
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });

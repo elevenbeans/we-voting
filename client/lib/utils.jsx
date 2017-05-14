@@ -116,6 +116,17 @@ function Base64() {
  }
 }
 
+function getDevice(){
+  var u = navigator.userAgent;
+  return {
+    mobile: !!u.match(/AppleWebKit.*Mobile.*/) , //是否为移动终端
+    ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+    android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端
+    iPhone: u.indexOf('iPhone') > -1, //是否为iPhone
+    iPad: u.indexOf('iPad') > -1 //是否iPad
+  };
+}
+
 var base64 = new Base64();
 
-export { getCookie, setCookie, base64 }
+export { getCookie, setCookie, base64, getDevice}

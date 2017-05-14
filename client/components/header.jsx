@@ -12,8 +12,10 @@ class Header extends Component {
     super(props);
   }
   componentWillMount() {
-  	appInfo.name = base64.decode(getCookie('name'));
-  	appInfo.avatar = base64.decode(getCookie('avatar'));
+  	userInfo.name = base64.decode(getCookie('name'));
+  	userInfo.avatar = base64.decode(getCookie('avatar'));
+  	// userInfo.id = base64.decode(getCookie('id'));
+
   }
   signOut() {
   	setCookie('name','');
@@ -23,7 +25,7 @@ class Header extends Component {
   	location.reload();
   }
   render() {
-  	var _imgUrl = appInfo.avatar
+  	var _imgUrl = userInfo.avatar
     return (
 			<div>
 				<nav className="navbar navbar-inverse" style={{"margin-bottom": "1px"}}>
@@ -44,12 +46,12 @@ class Header extends Component {
 			        <li>
 			      		<Link to = "/list">All Polls</Link>
 			        </li>
-			   			{appInfo.name &&
+			   			{userInfo.name &&
 			   				<li>
-			      			<Link to = {"/list/" + appInfo.name}>My Polls</Link>
+			      			<Link to = {"/list/" + userInfo.name}>My Polls</Link>
 			        	</li>
 			       	}
-			   			{appInfo.name &&
+			   			{userInfo.name &&
 			   				<li>
 			      			<Link to = "/new">New Polls</Link>
 			        	</li>
@@ -58,9 +60,9 @@ class Header extends Component {
 			      <ul className="nav navbar-nav navbar-right">
 			        <li>
 			        	<a>
-				        	{appInfo.name &&
+				        	{userInfo.name &&
 				        		<img
-				        		src={appInfo.avatar}
+				        		src={userInfo.avatar}
 				        		width="20px"
 				        		style={{"border-radius":"3px"}}
 				        		/>
@@ -79,7 +81,7 @@ class Header extends Component {
 			          <ul className="dropdown-menu">
 			            <li>
 			            	<a href="/login/github">
-			            	{appInfo.name?appInfo.name:'Sign in'}
+			            	{userInfo.name?userInfo.name:'Sign in'}
 			            	</a>
 			            </li>
 			            <li>
@@ -93,7 +95,7 @@ class Header extends Component {
 			            		About author
 			            	</a>
 			            </li>
-			            {appInfo.name &&
+			            {userInfo.name &&
 			            	<li><a href = "#" onClick={this.signOut} > Sign out </a></li>
 			            }
 			          </ul>
