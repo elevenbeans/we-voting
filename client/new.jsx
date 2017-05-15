@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { Component } from 'react';
+import { browserHistory } from 'react-router';
 
 import Footer from './components/footer';
 
@@ -10,10 +11,23 @@ class New extends Component {
 	constructor(props) {
     super(props);
     this.state = {
+      index: 0,
       options: [
-        'Like ...',
-        'Dislike ...',
-        'Do not matter ...'
+        {
+          'option':'Like ...',
+          'count': 0,
+          'index': 0
+        }, 
+        {
+          'option':'Dislike ...',
+          'count': 0,
+          'index': 1
+        }, 
+        {
+          'option':'Do not matter ...',
+          'count': 0,
+          'index': 2
+        }
       ]
     }
   }
@@ -25,11 +39,18 @@ class New extends Component {
   }
   addOptions(){
     var _temp = this.state.options;
-    _temp.push($('#poll-option').val());
+    var _index = this.state.index;
+    _temp.push({
+      'option': $('#poll-option').val(),
+      'count': 0,
+      'index': this.state.index
+    });
 
     this.setState({
-      options: _temp
+      options: _temp,
+      index: _index + 1
     });
+
     $('#poll-option').val('');
   }
   deleteOptions(e){
@@ -43,7 +64,26 @@ class New extends Component {
     });
   }
   submitPollData(){
-
+    var _request = {
+      title: $('#poll-title').val() || 'Default title',
+      description: $('#poll-description').val() || 'Default description',
+      options: this.state.options,
+      ownerName: userInfo.name
+    }
+    $.ajax({
+      type: "POST",
+      url: '/api/insertPoll',
+      async: true,
+      contentType: "application/json;charset=utf-8",
+      data: JSON.stringify(_request),
+      dataType: 'json',
+      success: function (data) {
+        if(data && data.result) {
+          console.log(this.props);
+          browserHistory.push('/list/' + userInfo.name);
+        }
+      }.bind(this)
+    });
   }
   render() {
     return (
@@ -91,7 +131,7 @@ class New extends Component {
                 className="list-group-item"
               >            
                 <div className="input-group">
-                  {item}
+                  {item.option}
                   <span className="input-group-btn">
                     <button
                       className="btn btn-danger"

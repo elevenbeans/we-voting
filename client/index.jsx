@@ -47,10 +47,10 @@ render((<Router key={Math.random()} history={browserHistory} >
             </Route>
             
             <Route path="detail" component={Detail}>
+              <Route path=":id" component={Detail}></Route>
             </Route>
 
-            <Route path="new" component={New}>
-            </Route>
+            <Route path="new" component={New}></Route>
 
           </Route>
         </Router>

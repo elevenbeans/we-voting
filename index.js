@@ -9,10 +9,10 @@ To do List:
   |-- options (array)
   	|-- optionsCtx (str)
   	|-- count (mumber)
-	|-- UserID/OwnerID (number)
+	|-- UserName (str)
 
 + API
-	|-- GetAllPolls || GetPollsByID || GetPollsByOwnerID
+	|-- GetAllPolls || GetPollsByUserName || GetPollByID
 	|-- voteByPollIDAndOptionIndex
 
 + verify user login status when voting
@@ -24,8 +24,11 @@ var app = express();
 
 var compression = require('compression');
 
-var view = require('./controller/router/view');
-var login = require('./controller/router/login');
+var bodyParser = require('body-parser');
+
+var api = require('./controller/routes/api');
+var view = require('./controller/routes/view');
+var login = require('./controller/routes/login');
 
 app.set('port', (process.env.PORT || 5000));
 
@@ -37,6 +40,10 @@ app.use(compression());
 
 app.use(express.static(__dirname + '/'));
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+
+app.use('/api', api);
 app.use('/login', login);
 app.use('/', view);
 

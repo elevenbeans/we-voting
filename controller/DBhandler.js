@@ -13,7 +13,7 @@ function queryUser(id, sucCal, errCal){
 	// 根据用户名查询用户信息, 回调中返回信息; 查询失败则回调返回 err
 	mongo.connect(dbUrl, function(err, db){
 	  var userList = db.collection('userList');
-	  userList.find({_id:id},{}).toArray(function(err, docs){
+	  userList.find({'_id':id},{}).toArray(function(err, docs){
 			if(err) {
 				db.close();
 				errCal(err);
@@ -39,13 +39,13 @@ DBhander.insertUser = function(obj, sucCal, errCal){
 	    	function(data){ // 查询成功返回
 	    		if(data.length === 0){ // 用户不存在
 			    	var _timestamp = new Date().getTime();
-				    userList.insert( // 插入
-				    	[{
-				    		_id: obj.id,
-				    		name: obj.name,
-				    		email: obj.email,
-				    		timestamp: _timestamp
-				    	}],
+				    userList.insertOne( // 插入
+				    	{
+				    		'_id': obj.id,
+				    		'name': obj.name,
+				    		'email': obj.email,
+				    		'timestamp': _timestamp
+				    	},
 				    	function(){ // 插入成功, end
 			        	db.close();
 			        	sucCal(obj);
@@ -65,10 +65,34 @@ DBhander.insertUser = function(obj, sucCal, errCal){
 	})
 }
 
-DBhander.queryPolls = function(id, sucCal, errCal) { // 根据用户 id 查询 poll
-	mongo.connect(dbUrl,function(err, db){
+DBhander.insertPoll = function(obj, sucCal, errCal){
+	// 插入一条新用户 成功返回 cb(obj) 失败返回 err
+	mongo.connect(dbUrl, function(err, db){
 	  var pullList = db.collection('pollList');
-	  pullList.find({_id: id},{}).sort({timestamp: -1}).toArray(function(err, docs){
+  	var _timestamp = new Date().getTime();
+
+    pullList.insertOne( // 插入
+    	{
+    		'_id': _timestamp,
+    		'pollID': _timestamp + '',
+    		'title': obj.title,
+    		'description': obj.description,
+    		'options': obj.options,
+    		'ownerName': obj.ownerName
+    	},
+    	function(){ // 插入成功, end
+      	db.close();
+      	sucCal(obj);
+    	}
+    );
+	})
+}
+
+DBhander.queryPolls = function(ownerName, sucCal, errCal) { // 根据用户 name 查询 poll
+	mongo.connect(dbUrl, function(err, db){
+
+	  var pullList = db.collection('pollList');
+	  pullList.find({ownerName: ownerName},{}).sort({timestamp: -1}).toArray(function(err, docs){
       if(err){
       	db.close();
       	errCal(err);
@@ -80,10 +104,10 @@ DBhander.queryPolls = function(id, sucCal, errCal) { // 根据用户 id 查询 p
 	});		
 },
 
-DBhander.updatePolls = function(id, sucCal, errCal) { // 根据用户 id 查询 poll
-	mongo.connect(dbUrl,function(err, db){
+DBhander.queryPollsByID = function(id, sucCal, errCal) { // 根据 poll id 查询 poll
+	mongo.connect(dbUrl, function(err, db){
 	  var pullList = db.collection('pollList');
-	  pullList.update({_id: id},{}).sort({timestamp: -1}).toArray(function(err, docs){
+	  pullList.find({pollID: id},{}).sort({timestamp: -1}).toArray(function(err, docs){
       if(err){
       	db.close();
       	errCal(err);
@@ -94,5 +118,26 @@ DBhander.updatePolls = function(id, sucCal, errCal) { // 根据用户 id 查询 
 	  });
 	});		
 },
+
+DBhander.upDatePollByID = function(obj, sucCal, errCal){
+	// 插入一条新用户 成功返回 cb(obj) 失败返回 err
+	mongo.connect(dbUrl, function(err, db){
+	  var pullList = db.collection('pollList');
+
+    pullList.updateOne( // update
+    	{
+    		'pollID': obj.pollID + '',
+    		'options.index': obj.index
+    	},
+    	{
+    		$inc: {"options.$.count": +1}
+    	},
+    	function(){ // update, end
+      	db.close();
+      	sucCal(obj.id);
+    	}
+    );
+	})
+}
 
 module.exports = DBhander;
