@@ -42,15 +42,13 @@ render((<Router key={Math.random()} history={browserHistory} >
           <Route path="/" component={App}>
             <IndexRoute component={Home}/>
             
-            <Route path="list" component={List}>
-              <Route path=":name" component={List}></Route>
+            <Route path="/list(/:name)" component={List}>
             </Route>
             
-            <Route path="detail" component={Detail}>
-              <Route path=":id" component={Detail}></Route>
+            <Route path="/detail(/:id)" component={Detail}>
             </Route>
 
-            <Route path="new" component={New}></Route>
+            <Route path="/new" component={New}></Route>
 
           </Route>
         </Router>
