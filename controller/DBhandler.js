@@ -104,7 +104,7 @@ DBhander.queryPolls = function(ownerName, sucCal, errCal) { // 根据用户 name
 	});		
 },
 
-DBhander.queryPollsByID = function(id, sucCal, errCal) { // 根据 poll id 查询 poll
+DBhander.queryPollByID = function(id, sucCal, errCal) { // 根据 poll id 查询 poll
 	mongo.connect(dbUrl, function(err, db){
 	  var pullList = db.collection('pollList');
 	  pullList.find({pollID: id},{}).sort({timestamp: -1}).toArray(function(err, docs){
@@ -130,7 +130,8 @@ DBhander.upDatePollByID = function(obj, sucCal, errCal){
     		'options.index': obj.index
     	},
     	{
-    		$inc: {"options.$.count": +1}
+    		$inc: {"options.$.count": +1},
+    		$push: {"voterList": obj.voter}
     	},
     	function(){ // update, end
       	db.close();

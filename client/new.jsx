@@ -47,8 +47,8 @@ class New extends Component {
     });
 
     this.setState({
-      options: _temp,
-      index: _index + 1
+      'options': _temp,
+      'index': _index + 1
     });
 
     $('#poll-option').val('');
@@ -60,15 +60,16 @@ class New extends Component {
       return index !== ~~_index;
     });
     this.setState({
-      options: _temp
+      'options': _temp
     });
   }
   submitPollData(){
     var _request = {
-      title: $('#poll-title').val() || 'Default title',
-      description: $('#poll-description').val() || 'Default description',
-      options: this.state.options,
-      ownerName: userInfo.name
+      'title': $('#poll-title').val() || 'Default title',
+      'description': $('#poll-description').val() || 'Default description',
+      'options': this.state.options,
+      'ownerName': userInfo.name,
+      'voterList': []
     }
     $.ajax({
       type: "POST",

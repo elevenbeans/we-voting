@@ -1,25 +1,3 @@
-/***
-
-Done:
-+ create poll db
-	|-- pollID (number)
-	|-- title (str)
-	|-- description (str)
-  |-- options (array)
-  	|-- option (str)
-  	|-- count (mumber)
-	|-- ownerName (str)
-
-+ API
-	|-- GetAllPolls || GetPollsByUserName || GetPollByID
-	|-- voteByPollIDAndOptionIndex
-
-To do List:
-
-+ verify user login status when voting
-+ restrict voting times
-
-**/
 
 var express = require('express');
 var router = express.Router();
@@ -41,12 +19,19 @@ router.use(function timeLog(req, res, next) {
   next();
 });
 
+function filterOptions(dataArray){
+	return dataArray.map(function(item){
+		delete item['options'];
+		return item;
+	});
+};
+
 router.post('/getPollList', function(req, resp){
 	
 	if(req.body.userName){
 		dbhandler.queryPolls(req.body.userName,
 			function(data){
-				resp.send(data);
+				resp.send(filterOptions(data));
 			},
 			function(err){
 
@@ -55,7 +40,7 @@ router.post('/getPollList', function(req, resp){
 	} else { // 查询所有存在的 (不为空的)
 		dbhandler.queryPolls({$exists: true},
 			function(data){
-				resp.send(data);
+				resp.send(filterOptions(data));
 			},
 			function(err){
 				
@@ -66,7 +51,7 @@ router.post('/getPollList', function(req, resp){
 });
 
 router.post('/getPollByID', function(req, resp){
-	dbhandler.queryPollsByID(req.body.pollID,
+	dbhandler.queryPollByID(req.body.pollID,
 		function(data){
 			resp.send(data);
 		},

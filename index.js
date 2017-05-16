@@ -1,21 +1,22 @@
 /***
 
-To do List:
-
+Done:
 + create poll db
 	|-- pollID (number)
 	|-- title (str)
 	|-- description (str)
   |-- options (array)
-  	|-- optionsCtx (str)
+  	|-- option (str)
   	|-- count (mumber)
-	|-- UserName (str)
+	|-- ownerName (str)
 
 + API
 	|-- GetAllPolls || GetPollsByUserName || GetPollByID
 	|-- voteByPollIDAndOptionIndex
 
-+ verify user login status when voting
+To do List:
+
++ restrict voting times
 
 **/
 
@@ -47,7 +48,7 @@ app.use('/api', api);
 app.use('/login', login);
 app.use('/', view);
 
-if(!process.env.NODE_ENV) {process.env.NODE_ENV = 'dev-HMR';}
+if(!process.env.NODE_ENV) { process.env.NODE_ENV = 'dev-HMR'; }
 
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));

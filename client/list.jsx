@@ -58,6 +58,7 @@ class List extends Component {
 						  <div className="panel-body">
 						  	{item.description}
 						  </div>
+              <div className="panel-footer">Created by {item.ownerName}</div>
 						</div>
 					</Link>
 				))}

@@ -4,6 +4,10 @@ import React from 'react';
 import { Component } from 'react';
 
 import * as ReactD3 from 'react-d3-components';
+
+import Loading from './components/loading';
+import Spning from './components/spning';
+
 import Footer from './components/footer';
 
 import { getDevice } from './lib/utils';
@@ -22,7 +26,10 @@ class Detail extends Component {
     super(props);
     this.state = {
       pollDetailData: [],
-      loadingPop: true
+      loadingPop: true,
+      isVoting: false,
+      votingIndex: '',
+      votable: true
     }
   }
   componentDidMount() {
@@ -30,7 +37,7 @@ class Detail extends Component {
   }
   fetchPollDetail(id){
     $.ajax({
-      type: "POST",
+      type: 'POST',
       url: '/api/getPollByID',
       async: true,
       contentType: "application/json;charset=utf-8",
@@ -42,6 +49,13 @@ class Detail extends Component {
             pollDetailData: data,
             loadingPop: false
           });
+          data[0] && data[0].voterList.map(function(item){
+            if(item === userInfo.name){
+              this.setState({
+                votable: false
+              });
+            }
+          }.bind(this));
         } else {
           this.setState({
             loadingPop: false
@@ -51,23 +65,36 @@ class Detail extends Component {
     });
   }
   voteOption(e){
+    if(!userInfo.name) {
+      location.href = '/login/github';
+      return false;
+    }
+    this.setState({
+      isVoting: true,
+      votingIndex: $(e.target).attr('data-index')
+    });
     $.ajax({
-      type: "POST",
-      url: '/api/upDatePollByID',
-      async: true,
-      contentType: "application/json;charset=utf-8",
-      data: JSON.stringify({
+      'type': "POST",
+      'url': '/api/upDatePollByID',
+      'async': true,
+      'contentType': "application/json;charset=utf-8",
+      'data': JSON.stringify({
         'pollID': this.props.params.id,
-        'index': ~~$(e.target).attr('data-index')
+        'index': ~~$(e.target).attr('data-index'),
+        'voter': userInfo.name
       }),
-      dataType: 'json',
+      'dataType': 'json',
       success: function (data) {
         if(data && data.result) {
-          alert('vote suc');
           this.fetchPollDetail(this.props.params.id);
+          this.setState({
+            isVoting: false,
+            votingIndex: ''
+          });
         } else {
           this.setState({
-            loadingPop: false
+            isVoting: false,
+            votingIndex: ''
           });
         }
       }.bind(this)
@@ -76,22 +103,23 @@ class Detail extends Component {
   render() {
     let _result = this.state.pollDetailData[0];
     let data = {
-      label: '',
-      values: []
+      'label': '',
+      'values': []
     };
-    let _countZero = 0;
+    let _countZero = 0; // 无人投票的选项数量
+
     _result && _result.options.map(function(item){
       data.label = item.option;
+
       if(!item.count){
         item.count = 0;
         _countZero++;
       }
 
       data.values.push({
-        x: item.option,
-        y: item.count
+        'x': item.option,
+        'y': item.count
       });
-
     });
 
     return (
@@ -121,8 +149,12 @@ class Detail extends Component {
                         type="button"
                         onClick={this.voteOption.bind(this)}
                         data-index = {index}
+                        style={{"position":"relative"}}
+                        disabled={this.state.votable?'':'disabled'}
                       >
-                        Vote
+                        {this.state.isVoting &&
+                          ~~this.state.votingIndex === index?<Spning />:'Voting'
+                        }
                       </button>
                     </span>
                   </div>
@@ -142,6 +174,7 @@ class Detail extends Component {
             }
           </div>
         }
+        {this.state.loadingPop && <Loading />}
         {!this.state.loadingPop &&
           this.state.pollDetailData.length === 0 &&
           <div> no result ~ </div>
