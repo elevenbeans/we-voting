@@ -57,7 +57,7 @@ router.get('/github/callback', function(req, resp){
 						},
 						function(err){
 							if(err === 'EXIST_USER') {
-								resp.redirect('/');
+								resp.redirect(req.path);
 							} else {
 								resp.send(err);
 							}
