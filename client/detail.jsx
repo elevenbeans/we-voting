@@ -153,7 +153,7 @@ class Detail extends Component {
                         disabled={this.state.votable?'':'disabled'}
                       >
                         {this.state.isVoting &&
-                          ~~this.state.votingIndex === index?<Spning />:'Voting'
+                          ~~this.state.votingIndex === index?<Spning />:'Vote'
                         }
                       </button>
                     </span>
