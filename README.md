@@ -20,6 +20,10 @@ A voting APP.
 
 ## Development mode
 
+Run `./start.sh`
+
+Or
+
 Run `export NODE_ENV=dev-HMR && ./start.sh` (enable HMR).
 
 

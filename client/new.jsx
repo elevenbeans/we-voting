@@ -4,6 +4,7 @@ import React from 'react';
 import { Component } from 'react';
 import { browserHistory } from 'react-router';
 
+import Spning from './components/spning';
 import Footer from './components/footer';
 
 class New extends Component {
@@ -28,7 +29,8 @@ class New extends Component {
           'count': 0,
           'index': 2
         }
-      ]
+      ],
+      isSubmitting: false
     }
   }
   componentDidMount() {
@@ -71,6 +73,9 @@ class New extends Component {
       'ownerName': userInfo.name,
       'voterList': []
     }
+    this.setState({
+      'isSubmitting': true
+    });
     $.ajax({
       type: "POST",
       url: '/api/insertPoll',
@@ -82,6 +87,9 @@ class New extends Component {
         if(data && data.result) {
           console.log(this.props);
           browserHistory.push('/list/' + userInfo.name);
+          this.setState({
+            'isSubmitting': false
+          });
         }
       }.bind(this)
     });
@@ -175,7 +183,7 @@ class New extends Component {
           className="btn btn-primary"
           onClick={this.submitPollData.bind(this)}
         >
-          Submit
+          {this.state.isSubmitting?<Spning />:'Submit'}
         </button>
         <Footer />
 			</div>
