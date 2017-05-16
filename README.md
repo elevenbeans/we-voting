@@ -103,3 +103,7 @@ Run `export NODE_ENV=production && ./start.sh`.
 + 模块化：ES6 module
 + 编译构建：Webpack + Babel
 + 插件： `react-d3-components`
+
+## LICENSE
+
+[MIT](https://mit-license.org/)
