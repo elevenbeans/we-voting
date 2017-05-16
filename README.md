@@ -70,13 +70,19 @@ Run `export NODE_ENV=production && ./start.sh`.
 ## Pages
 
 + home page
-   + `/`
+   + router: `/`
+   + example: `https://we-voting-ele.herokuapp.com/`
 + list page
-   + `/list(/:name)`
+   + router: `/list(/:name)`
+   + example: `https://we-voting-ele.herokuapp.com/list`
+
 + detail page
-   + `/detail(/:id)`
+   + router: `/detail(/:id)`
+   + example: `https://we-voting-ele.herokuapp.com/detail/1494908221812`
+
 + new page
-   + `/new`
+   + router: `/new`
+   + example: `https://we-voting-ele.herokuapp.com/new`
 
 ## Technology stack overview
 #### Server:
