@@ -1,5 +1,8 @@
 # WeVoting
-A voting App.
+
+A voting APP. 
+
+[View it online](https://we-voting-ele.herokuapp.com/)
 
 ## Setup
 

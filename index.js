@@ -1,24 +1,3 @@
-/***
-
-Done:
-+ create poll db
-	|-- pollID (number)
-	|-- title (str)
-	|-- description (str)
-  |-- options (array)
-  	|-- option (str)
-  	|-- count (mumber)
-	|-- ownerName (str)
-
-+ API
-	|-- GetAllPolls || GetPollsByUserName || GetPollByID
-	|-- voteByPollIDAndOptionIndex
-
-To do List:
-
-+ restrict voting times
-
-**/
 
 var express = require('express');
 var app = express();
