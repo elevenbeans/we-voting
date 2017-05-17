@@ -53,7 +53,7 @@ class Header extends Component {
 			       	}
 			   			{userInfo.name &&
 			   				<li>
-			      			<Link to = "/new">New Polls</Link>
+			      			<Link to = "/new">Create a new Poll</Link>
 			        	</li>
 			       	}
 			      </ul>
