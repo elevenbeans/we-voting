@@ -128,7 +128,10 @@ class Detail extends Component {
           <div>
             <div className="panel panel-default">
               <div className="panel-heading">
-                <h3 className="panel-title" style={{"font-size":"20px"}}>
+                <h3
+                  className="panel-title"
+                  style={{"font-size":"20px"}}
+                >
                   {_result.title}
                 </h3>
               </div>
@@ -136,7 +139,10 @@ class Detail extends Component {
                   {_result.description}
               </div>
             </div>
-            <ul className="list-group" style={{"line-height": "34px"}}>
+            <ul
+              className="list-group"
+              style={{"line-height": "34px"}}
+            >
               {_result && _result.options.map( (item, index) => (
                 <li
                   className="list-group-item"
@@ -168,7 +174,7 @@ class Detail extends Component {
                 data={data}
                 width={_width}
                 height={_height}
-                margin={{top: 10, bottom: 10, left: 100, right: 100}}
+                margin={{ top: 10, bottom: 10, left: 100, right: 100 }}
                 sort={null}
               />
             }

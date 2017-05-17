@@ -104,7 +104,10 @@ class New extends Component {
         >
           Poll title:
         </span> 
-        <div className="input-group" style={{"width":"100%"}}>
+        <div
+          className="input-group"
+          style={{"width":"100%"}}
+        >
           <input
             type="text"
             name="title"
@@ -114,8 +117,16 @@ class New extends Component {
             aria-describedby="sizing-addon2"
           />
         </div> <br />
-        <span className="input-group-addon" style={{"text-align":"left"}}>Description: </span>
-        <div className="input-group" style={{"width":"100%"}}>
+        <span
+          className="input-group-addon"
+          style={{"text-align":"left"}}
+        >
+          Description:
+        </span>
+        <div
+          className="input-group"
+          style={{"width":"100%"}}
+        >
           <textarea
             type="text"
             rows="3"
@@ -133,7 +144,10 @@ class New extends Component {
         >
           Options:
         </span> 
-        <ul className="list-group" style={{"line-height": "34px"}}>
+        <ul
+          className="list-group"
+          style={{"line-height": "34px"}}
+        >
           {this.state.options.map(
             (item, index)=>(
               <li
