@@ -4,6 +4,20 @@ A voting APP.
 
 [View it online](https://we-voting-ele.herokuapp.com/)
 
+具体功能为：
+
++ 对于已经授权用户可以：
+  + 新建一个 poll，可自定义其中的选项
+  + 存储发起的 polls，下次登陆仍旧可以看到自己发起的 polls 集合
+  + 看到应用中所有用户创建的 polls 的实时投票结果 （用图表展示）
+  + 向所有 polls 投票（每个 poll 每个用户号只能投一票）.
+  + 可分享 poll (poll 详情页支持外部 landing)
+
++ 非授权用户只能：
+  + 看到应用中所有用户创建的 polls 的实时投票结果 （用图表展示）
+
+
+
 ## Technology stack overview
 
 #### Server:
