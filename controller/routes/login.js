@@ -26,8 +26,7 @@ router.get('/github/callback', function(req, resp){
 				client_id: config.CLIENT_ID,
 				client_secret: config.CLIENT_SECRET,
 				code: req.query.code,
-				redirect_uri: req.query.redirect_uri, 
-//config.REDIRECT_URI 
+				redirect_uri: config.REDIRECT_URI,
 				state: req.query.state
 			}
 		},
@@ -54,11 +53,11 @@ router.get('/github/callback', function(req, resp){
 
 					dbhandler.insertUser(data,
 						function(data){
-		 					resp.redirect(req.query.redirect_uri);
+		 					resp.redirect(req.query.current_uri);
 						},
 						function(err){
 							if(err === 'EXIST_USER') {
-								resp.redirect(req.query.redirect_uri);
+								resp.redirect(req.query.current_uri);
 							} else {
 								resp.send(err);
 							}
@@ -77,7 +76,7 @@ router.get('/github', function(req, resp){
   path += '&scope=repo,gist';
   path += '&state='+ dataStr;
   path += '&state='+ dataStr;
-  path += '&redirect_uri' + req.originalUrl;
+  path += '&current_uri' + req.originalUrl;
   resp.redirect(path);
 });
 
