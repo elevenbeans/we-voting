@@ -7,12 +7,13 @@ import { browserHistory } from 'react-router';
 import Spning from './components/spning';
 import Footer from './components/footer';
 
+let optionIndex = 0;
+
 class New extends Component {
 
 	constructor(props) {
     super(props);
     this.state = {
-      index: 0,
       options: [
         
       ],
@@ -25,23 +26,21 @@ class New extends Component {
       location.href = location.origin;
     }
   }
-  addOptions(){
+  addOptions(e){
     var _temp = this.state.options;
-    var _index = this.state.index;
 
     if(!$('#poll-option').val()) return
     
     _temp.push({
       'option': $('#poll-option').val(),
       'count': 0,
-      'index': this.state.index
+      'index': optionIndex
     });
 
     this.setState({
-      'options': _temp,
-      'index': _index + 1
+      'options': _temp
     });
-
+    optionIndex = optionIndex + 1;
     $('#poll-option').val('');
   }
   deleteOptions(e){
@@ -50,6 +49,7 @@ class New extends Component {
     _temp = _temp.filter(function(item, index){
       return index !== ~~_index;
     });
+    optionIndex = optionIndex - 1;
     this.setState({
       'options': _temp
     });
