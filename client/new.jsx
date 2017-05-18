@@ -47,7 +47,6 @@ class New extends Component {
 	return index !== ~~_index;
     });
 
-console.log(_temp);
 
     _temp.map(function(item, index){
 	item.index = index;
