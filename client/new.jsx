@@ -7,8 +7,6 @@ import { browserHistory } from 'react-router';
 import Spning from './components/spning';
 import Footer from './components/footer';
 
-let optionIndex = 0;
-
 class New extends Component {
 
 	constructor(props) {
@@ -34,13 +32,12 @@ class New extends Component {
     _temp.push({
       'option': $('#poll-option').val(),
       'count': 0,
-      'index': optionIndex
+      'index': this.state.options.length
     });
 
     this.setState({
       'options': _temp
     });
-    optionIndex = optionIndex + 1;
     $('#poll-option').val('');
   }
   deleteOptions(e){
@@ -48,7 +45,7 @@ class New extends Component {
     var _temp = this.state.options;
     _temp = _temp.filter(function(item, index){
 if(index > ~~_index){
-	item.index = item.index - 1;
+item.index = item.index - 1;
 }
       return index !== ~~_index;
     });
