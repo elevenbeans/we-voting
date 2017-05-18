@@ -4,6 +4,22 @@ A voting APP.
 
 [View it online](https://we-voting-ele.herokuapp.com/)
 
+## Technology stack overview
+#### Server:
+
++ 环境：Node
++ 框架：Express
++ 工具：Request
++ 模版引擎：Ejs
++ DataBase: Mongodb
+
+#### Front-end:
+
++ 语言标准：ECMAScript 6
++ 框架: React + ReactDOM + React-Router
++ 模块化：ES6 module
++ 编译构建：Webpack + Babel
++ 插件： `react-d3-components`
 ## Setup
 
 + Install node.js [Ubuntu/Mac](https://github.com/creationix/nvm) , [Windows](https://nodejs.org/en/download/)
@@ -90,23 +106,6 @@ Run `export NODE_ENV=production && ./start.sh`.
 + new page
    + router: `/new`
    + example: `https://we-voting-ele.herokuapp.com/new`
-
-## Technology stack overview
-#### Server:
-
-+ 环境：Node
-+ 框架：Express
-+ 工具：Request
-+ 模版引擎：Ejs
-+ DataBase: Mongodb
-
-#### Front-end:
-
-+ 语言标准：ECMAScript 6
-+ 框架: React + ReactDOM + React-Router
-+ 模块化：ES6 module
-+ 编译构建：Webpack + Babel
-+ 插件： `react-d3-components`
 
 ## LICENSE
 
