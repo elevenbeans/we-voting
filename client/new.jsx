@@ -14,21 +14,7 @@ class New extends Component {
     this.state = {
       index: 0,
       options: [
-        {
-          'option':'Like ...',
-          'count': 0,
-          'index': 0
-        }, 
-        {
-          'option':'Dislike ...',
-          'count': 0,
-          'index': 1
-        }, 
-        {
-          'option':'Do not matter ...',
-          'count': 0,
-          'index': 2
-        }
+        
       ],
       isSubmitting: false
     }
