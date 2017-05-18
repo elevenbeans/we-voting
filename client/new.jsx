@@ -69,6 +69,10 @@ class New extends Component {
     });
   }
   submitPollData(){
+    if(this.state.options.length < 2 ){
+      alert('At lest two options');
+      return
+    }
     var _request = {
       'title': $('#poll-title').val() || 'Default title',
       'description': $('#poll-description').val() || 'Default description',
