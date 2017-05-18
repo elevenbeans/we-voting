@@ -47,12 +47,16 @@ class New extends Component {
     var _index = $(e.target).attr('data-index');
     var _temp = this.state.options;
     _temp = _temp.filter(function(item, index){
+if(index > ~~_index){
+	item.index = item.index - 1;
+}
       return index !== ~~_index;
     });
     optionIndex = optionIndex - 1;
     this.setState({
       'options': _temp
     });
+
   }
   submitPollData(){
     if(this.state.options.length < 2 ){
