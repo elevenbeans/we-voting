@@ -42,6 +42,9 @@ class New extends Component {
   addOptions(){
     var _temp = this.state.options;
     var _index = this.state.index;
+
+    if(!$('#poll-option').val()) return
+    
     _temp.push({
       'option': $('#poll-option').val(),
       'count': 0,
