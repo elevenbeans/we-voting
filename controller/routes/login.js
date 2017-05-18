@@ -75,6 +75,8 @@ router.get('/github', function(req, resp){
   path += '?client_id='+ config.CLIENT_ID;
   path += '&scope=repo,gist';
   path += '&state='+ dataStr;
+  path += '&state='+ dataStr;
+pats += ‘&redirect_uri’ + req.originalUrl;
   resp.redirect(path);
 });
 
