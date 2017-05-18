@@ -73,6 +73,14 @@ class New extends Component {
       alert('At lest two options');
       return
     }
+    if(!$('#poll-title').val()){
+      alert('Input your poll title!');
+      return
+    }
+    if(!$('#poll-description').val()){
+      alert('Input your poll description!');
+      return
+    }
     var _request = {
       'title': $('#poll-title').val() || 'Default title',
       'description': $('#poll-description').val() || 'Default description',
