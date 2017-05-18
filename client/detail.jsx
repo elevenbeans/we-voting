@@ -66,7 +66,7 @@ class Detail extends Component {
   }
   voteOption(e){
     if(!userInfo.name) {
-      location.href = '/login/github';
+      location.href = '/login/github' + '?currentPath=' + location.pathname;
       return false;
     }
     this.setState({
