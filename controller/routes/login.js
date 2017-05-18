@@ -53,11 +53,11 @@ router.get('/github/callback', function(req, resp){
 
 					dbhandler.insertUser(data,
 						function(data){
-		 					resp.redirect(config.CDN_URL + req.query.current_uri);
+		 					resp.redirect('/');
 						},
 						function(err){
 							if(err === 'EXIST_USER') {
-								resp.redirect(config.CDN_URL + req.query.current_uri);
+								resp.redirect('/');
 							} else {
 								resp.send(err);
 							}
@@ -77,7 +77,7 @@ console.log(req);
   path += '&scope=repo,gist';
   path += '&state='+ dataStr;
   path += '&state='+ dataStr;
-  path += '&current_uri=' + req.query.currentPath;
+  path += '&current_uri=‘ + req.query.currentPath;
   resp.redirect(path);
 });
 
