@@ -44,10 +44,7 @@ class New extends Component {
     var _index = $(e.target).attr('data-index');
     var _temp = this.state.options;
     _temp = _temp.filter(function(item, index){
-				return index !== ~~_index})
-			.map(function(item, index){
-				item.index = index;
-			});
+				return index !== ~~_index});
     this.setState({
       'options': _temp
     });
