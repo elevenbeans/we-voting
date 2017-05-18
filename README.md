@@ -5,6 +5,7 @@ A voting APP.
 [View it online](https://we-voting-ele.herokuapp.com/)
 
 ## Technology stack overview
+
 #### Server:
 
 + 环境：Node
@@ -20,6 +21,7 @@ A voting APP.
 + 模块化：ES6 module
 + 编译构建：Webpack + Babel
 + 插件： `react-d3-components`
+
 ## Setup
 
 + Install node.js [Ubuntu/Mac](https://github.com/creationix/nvm) , [Windows](https://nodejs.org/en/download/)
