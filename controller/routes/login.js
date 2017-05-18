@@ -77,7 +77,7 @@ console.log(req);
   path += '&scope=repo,gist';
   path += '&state='+ dataStr;
   path += '&state='+ dataStr;
-  path += '&current_uri=‘ + req.query.currentPath;
+  // path += '&current_uri=‘ + req.query.currentPath;
   resp.redirect(path);
 });
 
