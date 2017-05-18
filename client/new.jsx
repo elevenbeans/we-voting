@@ -43,13 +43,10 @@ class New extends Component {
   deleteOptions(e){
     var _index = $(e.target).attr('data-index');
     var _temp = this.state.options;
-    _temp = _temp.filter(function(item, index){
-if(index > ~~_index){
-item.index = item.index - 1;
-}
-      return index !== ~~_index;
-    });
-    optionIndex = optionIndex - 1;
+    _temp = _temp.filter((item, index) => index !== ~~_index)
+			.map(function(item, index){
+				item.index = index;
+			});
     this.setState({
       'options': _temp
     });
