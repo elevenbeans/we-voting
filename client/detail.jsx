@@ -49,7 +49,7 @@ class Detail extends Component {
             pollDetailData: data,
             loadingPop: false
           });
-          data[0] && data[0].voterList.map(function(item){
+          data[0] && data[0].voterList && data[0].voterList.map(function(item){
             if(item === userInfo.name){
               this.setState({
                 votable: false
