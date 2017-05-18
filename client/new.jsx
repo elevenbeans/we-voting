@@ -47,6 +47,7 @@ class New extends Component {
 	return index !== ~~_index
     });
 
+console.log(_temp);
     this.setState({
       'options': _temp
     });
