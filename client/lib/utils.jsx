@@ -9,11 +9,11 @@ function getCookie(cname) {
   return "";
 }
 
-function setCookie(name, value){ 
+function setCookie(name, value, cfg){ 
   var Days = 30; 
   var exp = new Date(); 
   exp.setTime(exp.getTime() + Days*24*60*60*1000); 
-  document.cookie = name + "="+ escape (value) + ";expires=" + exp.toGMTString(); 
+  document.cookie = name + "="+ escape (value) + ';path=' + cfg.path + ";expires=" + exp.toGMTString(); 
 }
 
 

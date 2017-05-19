@@ -48,20 +48,18 @@ router.get('/github/callback', function(req, resp){
 		 				var _temp = new Buffer(str);
 		 				return _temp.toString('base64');
 		 			}
-		 			resp.cookie('id', toBase64(data.id));
-		 			resp.cookie('name', toBase64(data.name));
-		 			resp.cookie('email', toBase64(data.email));
-		 			resp.cookie('avatar', toBase64(data.avatar_url));
+		 			resp.cookie('id', toBase64(data.id), { path: '/'});
+		 			resp.cookie('name', toBase64(data.name), { path: '/'});
+		 			resp.cookie('email', toBase64(data.email), { path: '/'});
+		 			resp.cookie('avatar', toBase64(data.avatar_url), { path: '/'});
 
 					dbhandler.insertUser(data,
 						function(data){
-		 					//resp.redirect(_currentPath);
-		 					resp.redirect('/');
+		 					resp.redirect(_currentPath);
 						},
 						function(err){
 							if(err === 'EXIST_USER') {
-								//resp.redirect(_currentPath);
-		 						resp.redirect('/');
+								resp.redirect(_currentPath);
 							} else {
 								resp.send(err);
 							}

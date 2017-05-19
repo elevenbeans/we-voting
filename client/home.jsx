@@ -36,7 +36,7 @@ class Home extends Component {
 			      				"border-radius":"3px"
 			      			}}
 			      			className="btn btn-lg btn-primary"
-			      			href="/login/github"
+			      			href= {'/login/github' + '?currentPath=' + location.pathname}
 			      			role="button"
 			      			onClick={this.signIn}
 			      		>

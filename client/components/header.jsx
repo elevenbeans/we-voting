@@ -18,10 +18,10 @@ class Header extends Component {
 
   }
   signOut() {
-  	setCookie('name','');
-  	setCookie('avatar','');
-  	setCookie('id','');
-  	setCookie('email','');
+  	setCookie('name','', { path: '/'});
+  	setCookie('avatar','', { path: '/'});
+  	setCookie('id','', { path: '/'});
+  	setCookie('email','', { path: '/'});
   	location.reload();
   }
   render() {
@@ -80,7 +80,7 @@ class Header extends Component {
 			          </a>
 			          <ul className="dropdown-menu">
 			            <li>
-			            	<a href="/login/github">
+			            	<a href={'/login/github' + '?currentPath=' + location.pathname}>
 			            	{userInfo.name?userInfo.name:'Sign in'}
 			            	</a>
 			            </li>
@@ -96,7 +96,7 @@ class Header extends Component {
 			            	</a>
 			            </li>
 			            {userInfo.name &&
-			            	<li><a href = "#" onClick={this.signOut} > Sign out </a></li>
+			            	<li><a href = "" onClick={this.signOut} > Sign out </a></li>
 			            }
 			          </ul>
 			        </li>
