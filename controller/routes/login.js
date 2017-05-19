@@ -55,13 +55,13 @@ router.get('/github/callback', function(req, resp){
 
 					dbhandler.insertUser(data,
 						function(data){
-		 					resp.redirect(_currentPath);
-		 					// resp.redirect('/');
+		 					//resp.redirect(_currentPath);
+		 					resp.redirect('/');
 						},
 						function(err){
 							if(err === 'EXIST_USER') {
-								resp.redirect(_currentPath);
-		 						//resp.redirect('/');
+								//resp.redirect(_currentPath);
+		 						resp.redirect('/');
 							} else {
 								resp.send(err);
 							}
