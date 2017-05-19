@@ -126,3 +126,9 @@ Run `export NODE_ENV=production && ./start.sh`.
 ## LICENSE
 
 [MIT](https://mit-license.org/)
+
+## To do list
+
++ Unit test
++ Wechat login
++ List data pagination;
