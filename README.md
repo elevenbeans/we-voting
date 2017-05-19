@@ -1,8 +1,7 @@
+
 # WeVoting
 
-A voting APP. 
-
-[View it online](https://we-voting-ele.herokuapp.com/)
+A voting APP. [View online](https://we-voting-ele.herokuapp.com/)
 
 具体功能为：
 
@@ -16,9 +15,13 @@ A voting APP.
 + 非授权用户只能：
   + 看到应用中所有用户创建的 polls 的实时投票结果 （用图表展示）
 
+## To do list
 
++ Unit test
++ Wechat login (???)
++ List page data pagination;
 
-## Technology stack overview
+## Techstack overview
 
 #### Server:
 
@@ -126,9 +129,3 @@ Run `export NODE_ENV=production && ./start.sh`.
 ## LICENSE
 
 [MIT](https://mit-license.org/)
-
-## To do list
-
-+ Unit test
-+ Wechat login
-+ List data pagination;
