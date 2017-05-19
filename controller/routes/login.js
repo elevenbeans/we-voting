@@ -18,6 +18,8 @@ router.use(function timeLog(req, res, next) {
   next();
 });
 
+var _currentPath = '';
+
 router.get('/github/callback', function(req, resp){
 	request(
 		{
@@ -53,11 +55,13 @@ router.get('/github/callback', function(req, resp){
 
 					dbhandler.insertUser(data,
 						function(data){
-		 					resp.redirect('/');
+		 					resp.redirect(_currentPath);
+		 					// resp.redirect('/');
 						},
 						function(err){
 							if(err === 'EXIST_USER') {
-								resp.redirect('/');
+								resp.redirect(_currentPath);
+		 						//resp.redirect('/');
 							} else {
 								resp.send(err);
 							}
@@ -70,14 +74,13 @@ router.get('/github/callback', function(req, resp){
 })
 
 router.get('/github', function(req, resp){
-console.log(req);
   var dataStr = (new Date()).valueOf();
   var path = config.GITHUB_API.AUTHORIZE;
   path += '?client_id='+ config.CLIENT_ID;
   path += '&scope=repo,gist';
   path += '&state='+ dataStr;
   path += '&state='+ dataStr;
-  // path += '&current_uri=‘ + req.query.currentPath;
+  _currentPath = req.query.currentPath;
   resp.redirect(path);
 });
 
