@@ -12,23 +12,8 @@ class New extends Component {
 	constructor(props) {
     super(props);
     this.state = {
-      index: 0,
       options: [
-        {
-          'option':'Like ...',
-          'count': 0,
-          'index': 0
-        }, 
-        {
-          'option':'Dislike ...',
-          'count': 0,
-          'index': 1
-        }, 
-        {
-          'option':'Do not matter ...',
-          'count': 0,
-          'index': 2
-        }
+        
       ],
       isSubmitting: false
     }
@@ -39,23 +24,20 @@ class New extends Component {
       location.href = location.origin;
     }
   }
-  addOptions(){
+  addOptions(e){
     var _temp = this.state.options;
-    var _index = this.state.index;
 
     if(!$('#poll-option').val()) return
     
     _temp.push({
       'option': $('#poll-option').val(),
       'count': 0,
-      'index': this.state.index
+      'index': this.state.options.length
     });
 
     this.setState({
-      'options': _temp,
-      'index': _index + 1
+      'options': _temp
     });
-
     $('#poll-option').val('');
   }
   deleteOptions(e){
@@ -64,9 +46,16 @@ class New extends Component {
     _temp = _temp.filter(function(item, index){
       return index !== ~~_index;
     });
+
+
+    _temp.map(function(item, index){
+      item.index = index;
+    });
+
     this.setState({
       'options': _temp
     });
+
   }
   submitPollData(){
     if(this.state.options.length < 2 ){

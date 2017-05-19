@@ -70,11 +70,14 @@ router.get('/github/callback', function(req, resp){
 })
 
 router.get('/github', function(req, resp){
+console.log(req);
   var dataStr = (new Date()).valueOf();
   var path = config.GITHUB_API.AUTHORIZE;
   path += '?client_id='+ config.CLIENT_ID;
   path += '&scope=repo,gist';
   path += '&state='+ dataStr;
+  path += '&state='+ dataStr;
+  // path += '&current_uri=‘ + req.query.currentPath;
   resp.redirect(path);
 });
 
