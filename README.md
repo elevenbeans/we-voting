@@ -20,11 +20,13 @@ A voting APP. [View online](https://we-voting-ele.herokuapp.com/)
 + 非授权用户只能：
   + 看到应用中所有用户创建的 polls 的实时投票结果 （用图表展示）
 
-To do list:
+To do list: 
 
++ Wechat login
++ List page data pagination
 + Unit test
-+ Wechat login (???)
-+ List page data pagination;
+
+**欢迎所有 Contributor～**
 
 ## Techstack overview
 
