@@ -38,17 +38,17 @@ To do list:
 #### Server:
 
 + Enviroment: Node
-+ Framework: Express
++ Framework: [Express](http://expressjs.com/)
 + Tools: Request, compression, body-praser
 + Template engine: Ejs
-+ DataBase: Mongodb
++ DataBase: [Mongodb](https://www.mongodb.com/)
 
 #### Front-end:
 
 + JS standard: ECMAScript 6
 + Framework: React + ReactDOM + React-Router
 + Module bundler and compiler: Webpack + Babel
-+ Open source components: react-d3-components
++ Open source components: [react-d3-components](https://github.com/codesuki/react-d3-components)
 
 ## Setup
 
