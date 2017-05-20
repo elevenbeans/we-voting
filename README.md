@@ -9,17 +9,17 @@
 
 A voting APP. [View online](https://we-voting-ele.herokuapp.com/)
 
-具体功能为：
+Function list：
 
-+ 对于已经授权用户可以：
-  + 新建一个 poll，可自定义其中的选项
-  + 存储发起的 polls，下次登陆仍旧可以看到自己发起的 polls 集合
-  + 看到应用中所有用户创建的 polls 的实时投票结果 （用图表展示）
-  + 向所有 polls 投票（每个 poll 每个用户号只能投一票）.
-  + 可分享 poll (poll 详情页支持外部 landing)
++ Authenticated users can：
+  + create a poll with any number of possible items
+  + keep their polls and come back later to access them
+  + see the aggregate results of all polls（implemented using Charts）
+  + vote on every polls（one time on each poll）
+  + share all polls with their friends.
 
-+ 非授权用户只能：
-  + 看到应用中所有用户创建的 polls 的实时投票结果 （用图表展示）
++ Unauthenticated users just can：
+  + see the aggregate results of all polls（implemented using Charts）
 
 To do list: 
 
@@ -27,25 +27,24 @@ To do list:
 + List page data pagination
 + Unit test
 
-**欢迎所有 Contributor～**
+**I am grateful to any one for contributing bugfixes and improvements～**
 
 ## Techstack overview
 
 #### Server:
 
-+ 环境：Node
-+ 框架：Express
-+ 工具：Request
-+ 模版引擎：Ejs
++ Enviroment: Node
++ Framework: Express
++ Tools: Request, compression, body-praser
++ Template engine: Ejs
 + DataBase: Mongodb
 
 #### Front-end:
 
-+ 语言标准：ECMAScript 6
-+ 框架: React + ReactDOM + React-Router
-+ 模块化：ES6 module
-+ 编译构建：Webpack + Babel
-+ 插件： `react-d3-components`
++ JS standard: ECMAScript 6
++ Framework: React + ReactDOM + React-Router
++ Module bundler and compiler: Webpack + Babel
++ Open source components: react-d3-components
 
 ## Setup
 
@@ -98,6 +97,8 @@ Run `export NODE_ENV=production && ./start.sh`.
   |-- DBhandler.js // DataBase CRUD
 |-- dist // compiled front-end code
   |-- vendor
+    |-- jquery.min.js 
+    |-- bootstrap.min.js
     |-- react-dom.min.js // react-dom production version
     |-- react.min.js // react production version
   |-- loading.css
