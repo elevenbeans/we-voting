@@ -1,5 +1,10 @@
 
 # WeVoting
+[![GitHub stars](https://img.shields.io/github/stars/elevenBeans/WeVoting.svg)](https://github.com/elevenBeans/WeVoting/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/elevenBeans/WeVoting.svg)](https://github.com/elevenBeans/WeVoting/network)
+[![GitHub issues](https://img.shields.io/github/issues/elevenBeans/WeVoting.svg)](https://github.com/elevenBeans/WeVoting/issues)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://mit-license.org)
+
 
 A voting APP. [View online](https://we-voting-ele.herokuapp.com/)
 
