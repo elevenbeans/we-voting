@@ -6,7 +6,6 @@
 [![GitHub release](https://img.shields.io/github/release/elevenBeans/WeVoting.svg)](https://github.com/Gaohaoyang/gaohaoyang.github.io/releases)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://mit-license.org)
 
-
 A voting APP. [View online](https://we-voting-ele.herokuapp.com/)
 
 Function list：
@@ -27,7 +26,9 @@ To do list:
 + List page data pagination
 + Unit test
 
-**I am grateful to any one for contributing bugfixes and improvements～**
+## Contributing
+
+**I am grateful to any one for contributing bugfixes, issues and improvements～**
 
 ## Techstack overview
 
