@@ -127,6 +127,10 @@ function getDevice(){
   };
 }
 
+function formatPercentage(num){
+  return (Math.round(num*1000)).toFixed()/10;
+}
+
 var base64 = new Base64();
 
-export { getCookie, setCookie, base64, getDevice}
+export { getCookie, setCookie, base64, getDevice, formatPercentage}

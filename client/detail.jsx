@@ -10,7 +10,7 @@ import Spning from './components/spning';
 
 import Footer from './components/footer';
 
-import { getDevice } from './lib/utils';
+import { getDevice, formatPercentage } from './lib/utils';
 
 let PieChart = ReactD3.PieChart;
 
@@ -107,17 +107,19 @@ class Detail extends Component {
       'values': []
     };
     let _countZero = 0; // 无人投票的选项数量
+    let totalCounts = 0; // 该选项的投票总数
 
     _result && _result.options.map(function(item){
+      totalCounts += item.count;
+    });
+    _result && _result.options.map(function(item){
       data.label = item.option;
-
       if(!item.count){
         item.count = 0;
         _countZero++;
       }
-
       data.values.push({
-        'x': item.option,
+        'x': item.option + ' (' + formatPercentage(item.count/totalCounts) + '%)',
         'y': item.count
       });
     });
