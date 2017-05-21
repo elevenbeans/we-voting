@@ -4,7 +4,8 @@
 [![GitHub forks](https://img.shields.io/github/forks/elevenBeans/WeVoting.svg)](https://github.com/elevenBeans/WeVoting/network)
 [![GitHub issues](https://img.shields.io/github/issues/elevenBeans/WeVoting.svg)](https://github.com/elevenBeans/WeVoting/issues)
 [![GitHub release](https://img.shields.io/github/release/elevenBeans/WeVoting.svg)](https://github.com/Gaohaoyang/gaohaoyang.github.io/releases)
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://mit-license.org)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md#pull-requests)
+[![GitHub license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://mit-license.org)
 
 A voting APP. [View online](https://we-voting-ele.herokuapp.com/)
 
