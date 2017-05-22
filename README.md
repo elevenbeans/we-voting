@@ -1,9 +1,11 @@
 
 # WeVoting
+
 [![GitHub stars](https://img.shields.io/github/stars/elevenBeans/WeVoting.svg)](https://github.com/elevenBeans/WeVoting/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/elevenBeans/WeVoting.svg)](https://github.com/elevenBeans/WeVoting/network)
 [![GitHub issues](https://img.shields.io/github/issues/elevenBeans/WeVoting.svg)](https://github.com/elevenBeans/WeVoting/issues)
 [![GitHub release](https://img.shields.io/github/release/elevenBeans/WeVoting.svg)](https://github.com/Gaohaoyang/gaohaoyang.github.io/releases)
+[![Coverage Status](https://img.shields.io/coveralls/elevenBeans/weVoting/master.svg?style=flat)](https://coveralls.io/github/elevenBeans/weVoting?branch=master)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md#pull-requests)
 [![GitHub license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://mit-license.org)
 

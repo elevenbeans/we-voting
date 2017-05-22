@@ -16,7 +16,6 @@ function setCookie(name, value, cfg){
   document.cookie = name + "="+ escape (value) + ';path=' + cfg.path + ";expires=" + exp.toGMTString(); 
 }
 
-
 function Base64() {
  // private property
  var _keyStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
@@ -133,4 +132,4 @@ function formatPercentage(num){
 
 var base64 = new Base64();
 
-export { getCookie, setCookie, base64, getDevice, formatPercentage}
+export { getCookie, setCookie, base64, getDevice, formatPercentage }
