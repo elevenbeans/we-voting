@@ -59,7 +59,7 @@ class New extends Component {
   }
   submitPollData(){
     if(this.state.options.length < 2 ){
-      alert('At lest two options');
+      alert('At least two options');
       return
     }
     if(!$('#poll-title').val()){
