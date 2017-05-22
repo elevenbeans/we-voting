@@ -5,10 +5,12 @@
 [![GitHub forks](https://img.shields.io/github/forks/elevenBeans/WeVoting.svg)](https://github.com/elevenBeans/WeVoting/network)
 [![GitHub issues](https://img.shields.io/github/issues/elevenBeans/WeVoting.svg)](https://github.com/elevenBeans/WeVoting/issues)
 [![GitHub release](https://img.shields.io/github/release/elevenBeans/WeVoting.svg)](https://github.com/Gaohaoyang/gaohaoyang.github.io/releases)
-[![Build Status](https://img.shields.io/travis/elevenBeans/weVoting/master.svg?style=flat)](https://travis-ci.org/elevenBeans/weVoting)
-[![Coverage Status](https://img.shields.io/coveralls/elevenBeans/weVoting/master.svg?style=flat)](https://coveralls.io/github/elevenBeans/weVoting?branch=master)
+[![Build Status](https://travis-ci.org/elevenBeans/WeVoting.svg?branch=master)](https://travis-ci.org/elevenBeans/weVoting)
+[![Coverage Status](https://coveralls.io/repos/github/elevenBeans/WeVoting/badge.svg)](https://coveralls.io/github/elevenBeans/WeVoting)
+
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md#pull-requests)
 [![GitHub license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://mit-license.org)
+
 
 A voting APP. [View online](https://we-voting-ele.herokuapp.com/)
 
