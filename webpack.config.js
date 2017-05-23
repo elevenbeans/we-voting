@@ -15,7 +15,7 @@ if(process.env.NODE_ENV === 'dev-HMR' || process.env.NODE_ENV === 'dev') {
   CDN_URL = 'http://localhost:8088/';
 }
 // if(process.env.NODE_ENV === 'pre') CDN_URL = '//localhost:5000/';
-if(process.env.NODE_ENV === 'production') CDN_URL = './';
+if(process.env.NODE_ENV === 'production') CDN_URL = 'https://we-voting-ele.herokuapp.com/';
 
 var config = {
   entry: {
