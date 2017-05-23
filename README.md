@@ -32,7 +32,7 @@ To do list:
 
 + Wechat login
 + List page data pagination
-+ Unit test (ding now)
++ Unit test (doing now)
 + Code format (eslint)
 
 ## Contributing
