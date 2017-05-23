@@ -32,7 +32,8 @@ To do list:
 
 + Wechat login
 + List page data pagination
-+ Unit test
++ Unit test (ding now)
++ Code format (eslint)
 
 ## Contributing
 
@@ -84,6 +85,10 @@ For windows,
 	npm run start // start node server
 	
 	npm run watch // watching changes
+
+## Pre mode
+
+Run `export NODE_ENV=pre && ./start.sh`.
 
 ## Production mode
 

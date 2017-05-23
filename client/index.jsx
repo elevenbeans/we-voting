@@ -1,9 +1,7 @@
 'use strict';
 
-//import $ from 'zepto';
-import React from 'react';
 import { render } from 'react-dom';
-import { Router, Route, IndexRoute, browserHistory } from 'react-router';
+import { Router, browserHistory } from 'react-router';
 
 import { RouteTransition, presets } from 'react-router-transition';
 
