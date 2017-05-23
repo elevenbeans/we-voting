@@ -62,7 +62,7 @@ const rootRoute = {
       }
     },
     {
-      path:'detail/(:id)',
+      path:'detail(/:id)',
       getComponent(nextState,callback){
         require.ensure([],require => {
           callback(null,require('./detail').default);
