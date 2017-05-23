@@ -12,9 +12,9 @@ console.log('process.env.NODE_ENV in webpack config::::',process.env.NODE_ENV);
 if(!process.env.NODE_ENV) process.env.NODE_ENV = 'dev-HMR';
 
 if(process.env.NODE_ENV === 'dev-HMR' || process.env.NODE_ENV === 'dev') {
-  CDN_URL = 'http://localhost:8088';
+  CDN_URL = 'http://localhost:8088/';
 }
-// if(process.env.NODE_ENV === 'pre') CDN_URL = '//localhost:3000';
+// if(process.env.NODE_ENV === 'pre') CDN_URL = '//localhost:5000/';
 if(process.env.NODE_ENV === 'production') CDN_URL = './';
 
 var config = {
@@ -26,7 +26,7 @@ var config = {
   },
   output: {
     path: path.resolve(__dirname, './dist'),
-    publicPath: CDN_URL + "/dist/", //静态资源文件内的请求路径指向静态资源服务器
+    publicPath: CDN_URL + "dist/", //静态资源文件内的请求路径指向静态资源服务器
     filename: '[name].bundle.js',
     chunkFilename: '[name].chunk.js'
   },
