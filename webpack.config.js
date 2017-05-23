@@ -27,7 +27,8 @@ var config = {
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: CDN_URL + "/dist/", //静态资源文件内的请求路径指向静态资源服务器
-    filename: '[name].bundle.js'
+    filename: '[name].bundle.js',
+    chunkFilename: '[name].chunk.js'
   },
   externals: EXTERNALS,
   module: {

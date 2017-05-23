@@ -7,22 +7,18 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 
 import { RouteTransition, presets } from 'react-router-transition';
 
-import Home from './home';
 import Header from './components/header';
 
-import Detail from './detail';
-// import FlightList from 'flightlist';
-import List from './list';
-
-import New from './new';
+// import Home from './home'; // Load on demand
+// import Detail from './detail'; 
+// import List from './list';
+// import New from './new';
 
 if (module.hot && process.env.NODE_ENV === 'dev-HMR') module.hot.accept();
 
-// console.log('process.env.NODE_ENV in Front-end:', process.env.NODE_ENV);
-
 var styles = presets.slideLeft;
 
-var App = function({ children, location }) {
+const App = function({ children, location }) {
   styles = location.action === 'POP' ? presets.slideRight : presets.slideLeft;
   return (
   <div>
@@ -38,19 +34,45 @@ var App = function({ children, location }) {
   );
 };
 
-render((<Router key={Math.random()} history={browserHistory} >
-          <Route path="/" component={App}>
-            <IndexRoute component={Home}/>
-            
-            <Route path="/list(/:name)" component={List}>
-            </Route>
-            
-            <Route path="/detail(/:id)" component={Detail}>
-            </Route>
+const rootRoute = {
+  path: '/',
+  component: App,
+  indexRoute: {
+    getComponent(nextState,callback){
+      require.ensure([], require => {
+        callback(null,require('./home').default);
+      },'home');
+    }
+  },
+  childRoutes: [
+    {
+      path:'new',
+      getComponent(nextState,callback){
+        require.ensure([], require => {
+          callback(null,require('./new').default);
+        },'new');
+       }
+    },
+    {
+      path:'list(/:name)',
+      getComponent(nextState,callback){
+        require.ensure([],require => {
+          callback(null,require('./list').default);
+        },'list');
+      }
+    },
+    {
+      path:'detail/(:id)',
+      getComponent(nextState,callback){
+        require.ensure([],require => {
+          callback(null,require('./detail').default);
+        },'detail');
+      }
+    }
+  ]
+};
 
-            <Route path="/new" component={New}></Route>
-
-          </Route>
+render((<Router key={Math.random()} history={browserHistory} routes = {rootRoute}>
         </Router>
   ), document.getElementById('app')
 );
