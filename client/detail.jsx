@@ -34,7 +34,6 @@ class Detail extends Component {
   }
   componentDidMount() {
     $('#globalTransition').hide();
-
     this.fetchPollDetail(this.props.params.id);
   }
   fetchPollDetail(id){

@@ -11,7 +11,6 @@ class Home extends Component {
     super(props);
   }
   componentDidMount() {
-  	console.log(this.refs.globalTransition);
   	$('#globalTransition').hide();
   }
   render(){

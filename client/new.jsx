@@ -18,7 +18,6 @@ class New extends Component {
   }
   componentDidMount() {
     $('#globalTransition').hide();
-
     if(!userInfo.name){
       // 不支持未登陆 landing, 滚去首页!
       location.href = location.origin;

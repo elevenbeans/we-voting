@@ -17,7 +17,6 @@ class Header extends Component {
   	userInfo.name = base64.decode(getCookie('name'));
   	userInfo.avatar = base64.decode(getCookie('avatar'));
   	// userInfo.id = base64.decode(getCookie('id'));
-
   }
   signOut() {
   	setCookie('name','', { path: '/'});

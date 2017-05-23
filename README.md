@@ -10,8 +10,9 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md#pull-requests)
 [![GitHub license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://mit-license.org)
 
+A voting APP. [View Demo online](https://we-voting-ele.herokuapp.com/)
 
-A voting APP. [View online](https://we-voting-ele.herokuapp.com/)
+[Demo 看这里](https://we-voting-ele.herokuapp.com/)
 
 **[想看中文介绍？请点击这里 🇨🇳](http://elevenbeans.github.io/2017/05/16/%E6%92%B8%E4%BA%86%E4%B8%80%E4%B8%AA%E6%8A%95%E7%A5%A8App/)**
 
