@@ -40,7 +40,7 @@ const rootRoute = {
   indexRoute: {
     getComponent(nextState,callback){
       require.ensure([], require => {
-        callback(null,require('./home').default);
+        callback(null,require('home').default);
       },'home');
     }
   },
@@ -49,7 +49,7 @@ const rootRoute = {
       path:'new',
       getComponent(nextState,callback){
         require.ensure([], require => {
-          callback(null,require('./new').default);
+          callback(null,require('new').default);
         },'new');
        }
     },
@@ -57,7 +57,7 @@ const rootRoute = {
       path:'list(/:name)',
       getComponent(nextState,callback){
         require.ensure([],require => {
-          callback(null,require('./list').default);
+          callback(null,require('list').default);
         },'list');
       }
     },
@@ -65,7 +65,7 @@ const rootRoute = {
       path:'detail(/:id)',
       getComponent(nextState,callback){
         require.ensure([],require => {
-          callback(null,require('./detail').default);
+          callback(null,require('detail').default);
         },'detail');
       }
     }
