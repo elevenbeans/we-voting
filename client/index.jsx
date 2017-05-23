@@ -39,7 +39,7 @@ const rootRoute = {
   component: App,
   indexRoute: {
     getComponent(nextState, callback){
-      $('#globalTransition').show();
+      // $('#globalTransition').show();
       require.ensure([], require => {
         callback('', require('home').default);
       },'home');

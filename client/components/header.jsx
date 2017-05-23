@@ -27,7 +27,6 @@ class Header extends Component {
   }
   render() {
   	var _imgUrl = userInfo.avatar;
-
     return (
 			<div>
 			  <Transition />
