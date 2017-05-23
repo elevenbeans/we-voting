@@ -38,41 +38,45 @@ const rootRoute = {
   path: '/',
   component: App,
   indexRoute: {
-    getComponent(nextState,callback){
+    getComponent(nextState, callback){
+      $('#globalTransition').show();
       require.ensure([], require => {
-        callback(null,require('home').default);
+        callback('', require('home').default);
       },'home');
     }
   },
   childRoutes: [
     {
       path:'new',
-      getComponent(nextState,callback){
+      getComponent(nextState, callback){
+        $('#globalTransition').show();
         require.ensure([], require => {
-          callback(null,require('new').default);
-        },'new');
+          callback(null, require('new').default);
+        }, 'new');
        }
     },
     {
       path:'list(/:name)',
-      getComponent(nextState,callback){
-        require.ensure([],require => {
-          callback(null,require('list').default);
-        },'list');
+      getComponent(nextState, callback){
+        $('#globalTransition').show();
+        require.ensure([], require => {
+          callback(null, require('list').default);
+        }, 'list');
       }
     },
     {
       path:'detail(/:id)',
-      getComponent(nextState,callback){
+      getComponent(nextState, callback){
+        $('#globalTransition').show();
         require.ensure([],require => {
-          callback(null,require('detail').default);
-        },'detail');
+          callback(null, require('detail').default);
+        }, 'detail');
       }
     }
   ]
 };
 
-render((<Router key={Math.random()} history={browserHistory} routes = {rootRoute}>
+render((<Router key = {Math.random()} history = {browserHistory} routes = {rootRoute}>
         </Router>
   ), document.getElementById('app')
 );

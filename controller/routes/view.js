@@ -6,6 +6,7 @@ var config = serverConf.devConfig;
 
 console.log('process.env.NODE_ENV in view config::::',process.env.NODE_ENV);
 
+if(process.env.NODE_ENV === 'pre') config = serverConf.preConfig;
 if(process.env.NODE_ENV === 'production') config = serverConf.prdConfig;
 
 // 该路由使用的中间件

@@ -11,10 +11,10 @@ console.log('process.env.NODE_ENV in webpack config::::',process.env.NODE_ENV);
 
 if(!process.env.NODE_ENV) process.env.NODE_ENV = 'dev-HMR';
 
-if(process.env.NODE_ENV === 'dev-HMR' || process.env.NODE_ENV === 'dev') {
+if(process.env.NODE_ENV === 'dev-HMR') {
   CDN_URL = 'http://localhost:8088/';
 }
-// if(process.env.NODE_ENV === 'pre') CDN_URL = '//localhost:5000/';
+if(process.env.NODE_ENV === 'pre') CDN_URL = '//localhost:5000/';
 if(process.env.NODE_ENV === 'production') CDN_URL = 'https://we-voting-ele.herokuapp.com/';
 
 var config = {
@@ -31,6 +31,7 @@ var config = {
     chunkFilename: '[name].chunk.js'
   },
   externals: EXTERNALS,
+  devtool: process.env.NODE_ENV === 'dev-HMR'?'eval-source-map':'',
   module: {
     loaders: [
       {

@@ -14,6 +14,16 @@ exports.devConfig = {
 	DB_URL: 'mongodb://localhost:27017/voting'
 }
 
+exports.preConfig = {
+	HOST_URL: 'http://localhost:5000',
+	CDN_URL: 'http://localhost:5000',
+	REDIRECT_URI: 'http://localhost:5000/login/github/callback',
+	CLIENT_ID: '411b91fde0088b2efa2a',
+	CLIENT_SECRET: '1aef5524c34d0f11c2441e1dce2af8afa7d39ee1',
+	GITHUB_API: githubApi,
+	DB_URL: 'mongodb://localhost:27017/voting'
+}
+
 exports.prdConfig = {
 	HOST_URL: 'https://we-voting-ele.herokuapp.com',
 	CDN_URL: 'https://we-voting-ele.herokuapp.com',

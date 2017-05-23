@@ -4,6 +4,8 @@ import React from 'react';
 import { Component } from 'react';
 import { Link } from 'react-router';
 
+import Transition from './transition';
+
 import { getCookie, setCookie, base64} from '../lib/utils';
 
 class Header extends Component {
@@ -25,9 +27,11 @@ class Header extends Component {
   	location.reload();
   }
   render() {
-  	var _imgUrl = userInfo.avatar
+  	var _imgUrl = userInfo.avatar;
+
     return (
 			<div>
+			  <Transition />
 				<nav className="navbar navbar-inverse" style={{"margin-bottom": "1px"}}>
 			  <div className="container-fluid">
 			    <div className="navbar-header">

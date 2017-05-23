@@ -10,7 +10,10 @@ class Home extends Component {
 	constructor(props) {
     super(props);
   }
-
+  componentDidMount() {
+  	console.log(this.refs.globalTransition);
+  	$('#globalTransition').hide();
+  }
   render(){
   	return(
   		<div className = "homepage">

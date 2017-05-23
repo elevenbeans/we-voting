@@ -12,13 +12,13 @@ class New extends Component {
 	constructor(props) {
     super(props);
     this.state = {
-      options: [
-        
-      ],
+      options: [],
       isSubmitting: false
     }
   }
   componentDidMount() {
+    $('#globalTransition').hide();
+
     if(!userInfo.name){
       // 不支持未登陆 landing, 滚去首页!
       location.href = location.origin;
