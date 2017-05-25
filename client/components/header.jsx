@@ -39,7 +39,7 @@ class Header extends Component {
 			        <span className="icon-bar"></span>
 			        <span className="icon-bar"></span>
 			      </button>
-			      <a className="navbar-brand" href="#">Voting
+			      <a className="navbar-brand" href="/">Voting
 
 			      </a>
 			    </div>
