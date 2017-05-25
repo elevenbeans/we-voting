@@ -28,12 +28,14 @@ Function list：
 + Unauthenticated users just can：
   + see the aggregate results of all polls（implemented using Charts）
 
-To do list: 
+**To do list:**
 
-+ Wechat login
++ Unit test (Doing) 
+  + Coverage to 6% *-- updated 2017-05-22*
++ Wechat login (Doing)
+  +  developer account in applying   *-- updated 2017-05-25*
++ Code formate
 + List page data pagination
-+ Unit test (doing now)
-+ Code format (eslint)
 
 ## Contributing
 
@@ -53,7 +55,9 @@ To do list:
 	npm install
 	```
 
-## Development mode
+## Run
+
+### Development mode
 
 For *nix (including Mac),
 
@@ -69,15 +73,23 @@ For windows,
 	
 	npm run watch // watching changes
 
-## Pre mode
+### Pre mode
 
 Run `export NODE_ENV=pre && ./start.sh`.
 
-## Production mode
+### Production mode
 
 Run `export NODE_ENV=production && ./start.sh`.
 
-## Techstack overview
+## Test
+
+Run `npm run test`.
+
+Or,
+
+Run `npm run cover` to see test case coverage.
+
+### Techstack overview
 
 #### Server:
 
