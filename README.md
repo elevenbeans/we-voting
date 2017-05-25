@@ -32,7 +32,7 @@ Function list：
 
 + Unit test (Doing) 
   + Coverage to 6% *-- updated 2017-05-22*
-  + Coverage to 6% *-- updated 2017-05-22*
+  + Coverage to 29% *-- updated 2017-05-26*
 + Wechat login (Doing)
   +  developer account in applying   *-- updated 2017-05-25*
 + Code formate
