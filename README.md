@@ -32,6 +32,7 @@ Function list：
 
 + Unit test (Doing) 
   + Coverage to 6% *-- updated 2017-05-22*
+  + Coverage to 6% *-- updated 2017-05-22*
 + Wechat login (Doing)
   +  developer account in applying   *-- updated 2017-05-25*
 + Code formate
@@ -82,6 +83,8 @@ Run `export NODE_ENV=pre && ./start.sh`.
 Run `export NODE_ENV=production && ./start.sh`.
 
 ## Test
+
+### Mocha + should
 
 Run `npm run test`.
 
