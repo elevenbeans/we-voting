@@ -51,6 +51,8 @@
     "react-dom": "^15.4.1",
     "react-router": "^3.0.0",
     "react-router-transition": "0.0.6",
+    "should": "^11.2.1",
+    "supertest": "^3.0.0",
     "url-loader": "^0.5.7",
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.16.2"

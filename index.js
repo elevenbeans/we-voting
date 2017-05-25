@@ -29,6 +29,7 @@ app.use('/', view);
 
 if(!process.env.NODE_ENV) { process.env.NODE_ENV = 'dev-HMR'; }
 
-app.listen(app.get('port'), function() {
+module.exports = app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
+
