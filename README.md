@@ -31,7 +31,7 @@ Function list：
 **To do list:**
 
 + Unit test (Doing) 
-  + Coverage to 6% *-- updated 2017-05-25*
+  + Coverage to 6% *-- updated 2017-05-22*
 + Wechat login (Doing)
   +  developer account in applying   *-- updated 2017-05-25*
 + Code formate
