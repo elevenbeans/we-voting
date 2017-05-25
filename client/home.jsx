@@ -23,11 +23,27 @@ class Home extends Component {
 				  	<div
 				  		className="container"
 				  	>
-			      	<h1 style={{"font-size":"36px"}}>Let's voting!</h1>
+			      	<h1 style={{"font-size":"36px"}}>
+			      		Let's voting! <br />
+			      		<iframe
+			      			src = "https://ghbtns.com/github-btn.html?user=elevenBeans&repo=WeVoting&type=star&count=true"
+			      			scrolling="0"
+			      			width="110px"
+			      			height="30px"
+									style={{
+										"border":"0",
+										"position":"absolute",
+										"left":"12px",
+										"top": "12px"
+									}}
+			      		>
+			      		</iframe>
+
+			      	</h1>
 			      	<p className="lead">
 								This voting app is built by @elevenbeans, 
 								following the instructions of "Build a Voting App | Free Code Camp".<br />
-								Github Name: elevenBeans
+								Github Name: elevenBeans <br />
 							</p>
 			      	{!userInfo.name &&
 			      		<p>

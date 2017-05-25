@@ -39,23 +39,6 @@ To do list:
 
 **I am grateful to any one for contributing bugfixes, issues and improvements～**
 
-## Techstack overview
-
-#### Server:
-
-+ Enviroment: Node
-+ Framework: [Express](http://expressjs.com/)
-+ Tools: Request, compression, body-praser
-+ Template engine: Ejs
-+ DataBase: [Mongodb](https://www.mongodb.com/)
-
-#### Front-end:
-
-+ JS standard: ECMAScript 6
-+ Framework: React + ReactDOM + React-Router
-+ Module bundler and compiler: Webpack + Babel
-+ Open source components: [react-d3-components](https://github.com/codesuki/react-d3-components)
-
 ## Setup
 
 + Install node.js [Ubuntu/Mac](https://github.com/creationix/nvm) , [Windows](https://nodejs.org/en/download/)
@@ -93,6 +76,23 @@ Run `export NODE_ENV=pre && ./start.sh`.
 ## Production mode
 
 Run `export NODE_ENV=production && ./start.sh`.
+
+## Techstack overview
+
+#### Server:
+
++ Enviroment: Node
++ Framework: [Express](http://expressjs.com/)
++ Tools: Request, compression, body-praser
++ Template engine: Ejs
++ DataBase: [Mongodb](https://www.mongodb.com/)
+
+#### Front-end:
+
++ JS standard: ECMAScript 6
++ Framework: React + ReactDOM + React-Router
++ Module bundler and compiler: Webpack + Babel
++ Open source components: [react-d3-components](https://github.com/codesuki/react-d3-components)
 
 ## Directories
 
