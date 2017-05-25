@@ -89,7 +89,8 @@ Or,
 
 Run `npm run cover` to see test case coverage.
 
-### Techstack overview
+
+## Techstack overview
 
 #### Server:
 
