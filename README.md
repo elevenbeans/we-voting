@@ -1,8 +1,6 @@
 
 # WeVoting
 
-
-[![GitHub issues](https://img.shields.io/github/issues/elevenBeans/WeVoting.svg)](https://github.com/elevenBeans/WeVoting/issues)
 [![GitHub release](https://img.shields.io/github/release/elevenBeans/WeVoting.svg)](https://github.com/elevenBeans/WeVoting/releases)
 [![Build Status](https://travis-ci.org/elevenBeans/WeVoting.svg?branch=master)](https://travis-ci.org/elevenBeans/weVoting)
 [![Coverage Status](https://coveralls.io/repos/github/elevenBeans/WeVoting/badge.svg)](https://coveralls.io/github/elevenBeans/WeVoting)
