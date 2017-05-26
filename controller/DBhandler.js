@@ -120,10 +120,12 @@ DBhander.queryPollByID = function(id, sucCal, errCal) { // 根据 poll id 查询
 },
 
 DBhander.upDatePollByID = function(obj, sucCal, errCal){
-	// 插入一条新用户 成功返回 cb(obj) 失败返回 err
+	// 插入一条新用户 成功返回 cb(obj.id) 失败返回 err
 	mongo.connect(dbUrl, function(err, db){
 	  var pullList = db.collection('pollList');
-
+	  if(err){
+	  	errCal(err);
+	  }
     pullList.updateOne( // update
     	{
     		'pollID': obj.pollID + '',
@@ -135,7 +137,7 @@ DBhander.upDatePollByID = function(obj, sucCal, errCal){
     	},
     	function(){ // update, end
       	db.close();
-      	sucCal(obj.id);
+      	sucCal(obj);
     	}
     );
 	})
