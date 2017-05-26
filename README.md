@@ -25,13 +25,17 @@ Function list：
 + Unauthenticated users just can：
   + see the aggregate results of all polls（implemented using Charts）
 
-**To do list:**
+**Doing list:**
 
 + Unit test (Doing) 
   + Coverage to 6% *-- updated 2017-05-22*
   + Coverage to 29% *-- updated 2017-05-26*
-+ Wechat login (Doing)
-  +  developer account in applying   *-- updated 2017-05-25*
+  + Coverage up to 50% *-- updated 2017-05-26*
+
+![Unit test](https://raw.githubusercontent.com/elevenBeans/Grocery/master/unitTest.png)
+
++  <s>Wechat login (Doing)</s>
+  +  <s>developer account in applying   *-- updated 2017-05-25*</s>
 + Code formate
 + List page data pagination
 
