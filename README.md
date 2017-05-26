@@ -30,7 +30,7 @@ Function list：
 + Unit test (Doing) 
   + Coverage to 6% *-- updated 2017-05-22*
   + Coverage to 29% *-- updated 2017-05-26*
-  + Coverage up to 50% *-- updated 2017-05-26*
+  + Coverage up around 50% *-- updated 2017-05-26*
 
 ![Unit test](https://raw.githubusercontent.com/elevenBeans/Grocery/master/unitTest.png)
 
@@ -129,9 +129,9 @@ Run `npm run cover` to see test case coverage.
   |-- new.jsx // new page
 |-- controller // server-end controller
   |-- routes
-    |-- api.js // api controller
     |-- login.js // login routes
     |-- view.js // view routes
+  |-- api.js // api controller
   |-- DBhandler.js // DataBase CRUD
 |-- dist // compiled front-end code
   |-- vendor
