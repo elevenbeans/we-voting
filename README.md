@@ -137,11 +137,16 @@ Run `npm run cover` to see test case coverage.
   |-- vendor
     |-- jquery.min.js 
     |-- bootstrap.min.js
+    |-- bootstrap.min.css
     |-- react-dom.min.js // react-dom production version
     |-- react.min.js // react production version
   |-- loading.css
+  |-- vote.bundle.js // bundled voteApp intrance file
   |-- router.bundle.js // bundled react-router
-  |-- vote.bundle.js // bundled voteApp JS file
+  |-- detail.chunk.js // splitted JS file in detail page
+  |-- home.chunk.js // splitted JS file in home page
+  |-- list.chunk.js // splitted JS file in list page
+  |-- new.chunk.js // splitted JS file in new page
 |-- views // server-end views
   |-- error.ejs
   |-- footer.ejs
