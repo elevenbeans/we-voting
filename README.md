@@ -13,7 +13,7 @@ A voting APP.
 
 **[中文介绍请点击这里 🇨🇳](http://elevenbeans.github.io/2017/05/16/%E6%92%B8%E4%BA%86%E4%B8%80%E4%B8%AA%E6%8A%95%E7%A5%A8App/)**
 
-Function list：
+## Function
 
 + Authenticated users can：
   + create a poll with any number of possible items
@@ -25,7 +25,7 @@ Function list：
 + Unauthenticated users just can：
   + see the aggregate results of all polls（implemented using Charts）
 
-**Doing list:**
+## Doing list
 
 + Unit test (Doing) 
   + Coverage to 6% *-- updated 2017-05-22*
@@ -137,11 +137,16 @@ Run `npm run cover` to see test case coverage.
   |-- vendor
     |-- jquery.min.js 
     |-- bootstrap.min.js
+    |-- bootstrap.min.css
     |-- react-dom.min.js // react-dom production version
     |-- react.min.js // react production version
   |-- loading.css
+  |-- vote.bundle.js // bundled voteApp intrance file
   |-- router.bundle.js // bundled react-router
-  |-- vote.bundle.js // bundled voteApp JS file
+  |-- detail.chunk.js // splitted JS file in detail page
+  |-- home.chunk.js // splitted JS file in home page
+  |-- list.chunk.js // splitted JS file in list page
+  |-- new.chunk.js // splitted JS file in new page
 |-- views // server-end views
   |-- error.ejs
   |-- footer.ejs
