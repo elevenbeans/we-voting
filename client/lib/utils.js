@@ -115,8 +115,7 @@ function Base64() {
  }
 }
 
-function getDevice(){
-  var u = navigator.userAgent;
+function getDevice(u){
   return {
     mobile: !!u.match(/AppleWebKit.*Mobile.*/) , //是否为移动终端
     ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
@@ -132,4 +131,15 @@ function formatPercentage(num){
 
 var base64 = new Base64();
 
-export { getCookie, setCookie, base64, getDevice, formatPercentage }
+function getPageType(url){
+  if(!url) url = '/';
+  return {
+    homePage: !!url.match(/^\/$/),
+    listPage: !!url.match(/^\/list$/),
+    specialListPage: !!url.match(/^\/list(\/\w+)$/),
+    detailPage: !!url.match(/^\/detail$|^\/detail(\/\d+)$/),
+    newPage: !!url.match(/^\/new$/)
+  }
+}
+
+export { getCookie, setCookie, base64, getDevice, formatPercentage, getPageType }

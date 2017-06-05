@@ -37,7 +37,6 @@ const rootRoute = {
   component: App,
   indexRoute: {
     getComponent(nextState, callback){
-      // $('#globalTransition').show();
       require.ensure([], require => {
         callback('', require('home').default);
       },'home');
@@ -47,8 +46,8 @@ const rootRoute = {
     {
       path:'new',
       getComponent(nextState, callback){
-        $('#globalTransition').show();
         require.ensure([], require => {
+          $('#globalTransition').show();
           callback(null, require('new').default);
         }, 'new');
        }
@@ -56,8 +55,8 @@ const rootRoute = {
     {
       path:'list(/:name)',
       getComponent(nextState, callback){
-        $('#globalTransition').show();
         require.ensure([], require => {
+          $('#globalTransition').show();
           callback(null, require('list').default);
         }, 'list');
       }
@@ -65,8 +64,8 @@ const rootRoute = {
     {
       path:'detail(/:id)',
       getComponent(nextState, callback){
-        $('#globalTransition').show();
         require.ensure([],require => {
+          $('#globalTransition').show();
           callback(null, require('detail').default);
         }, 'detail');
       }

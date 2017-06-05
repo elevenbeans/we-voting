@@ -16,7 +16,7 @@ let PieChart = ReactD3.PieChart;
 
 let _width = 320, _height = 200;
 
-if(!getDevice().mobile){
+if(!getDevice(navigator.userAgent).mobile){
   _width = 600;
   _height = 400;
 }

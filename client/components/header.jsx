@@ -6,7 +6,7 @@ import { Link } from 'react-router';
 
 import Transition from './transition';
 
-import { getCookie, setCookie, base64} from '../lib/utils';
+import { getCookie, setCookie, base64, getPageType} from '../lib/utils';
 
 class Header extends Component {
 
@@ -45,16 +45,25 @@ class Header extends Component {
 			    </div>
 			    <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			      <ul className="nav navbar-nav">
-			        <li className="active"><a href="/">Home <span className="sr-only">(current)</span></a></li>
-			        <li>
-			      		<Link to = "/list">All Polls</Link>
+			        <li className="active">
+			        	<a href="/">Home 
+			        		<span className="sr-only">(current)</span>
+			        	</a>
 			        </li>
-			   			{userInfo.name &&
+			        {
+			        	!getPageType(location.pathname).listPage &&
+			        	<li>
+			      			<Link to = "/list">All Polls</Link>
+			        	</li>
+			      	}
+			   			{
+			   				!getPageType(location.pathname).specialListPage && userInfo.name &&
 			   				<li>
 			      			<Link to = {"/list/" + userInfo.name}>My Polls</Link>
 			        	</li>
 			       	}
-			   			{userInfo.name &&
+			   			{
+			   				!getPageType(location.pathname).newPage && userInfo.name &&
 			   				<li>
 			      			<Link to = "/new">Create a new Poll</Link>
 			        	</li>
@@ -65,9 +74,9 @@ class Header extends Component {
 			        	<a>
 				        	{userInfo.name &&
 				        		<img
-				        		src={userInfo.avatar}
-				        		width="20px"
-				        		style={{"border-radius":"3px"}}
+				        			src={userInfo.avatar}
+				        			width="20px"
+				        			style={{"border-radius":"3px"}}
 				        		/>
 				        	}
 			        	</a>
