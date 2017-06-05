@@ -31,9 +31,9 @@ A voting APP.
 + Unit test (Doing) 
   + Coverage to 6% *-- updated 2017-05-22*
   + Coverage to 29% *-- updated 2017-05-26*
-  + Coverage up around 50% *-- updated 2017-05-26*
+  + Coverage to 50% *-- updated 2017-06-04*
 
-![Unit test](https://raw.githubusercontent.com/elevenBeans/Grocery/master/unitTest.png)
+<img width="500px" src="https://raw.githubusercontent.com/elevenBeans/Grocery/master/unitTest.png" />
 
 +  <s>Wechat login (Doing)</s>
    + <s>developer account in applying   *-- updated 2017-05-25*</s>
