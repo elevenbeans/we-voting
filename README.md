@@ -1,8 +1,8 @@
 
 # WeVoting
 
-[![GitHub stars](https://img.shields.io/github/stars/elevenBeans/WeVoting.svg)](https://github.com/elevenBeans/WeVoting/stars)
-[![Build Status](https://travis-ci.org/elevenBeans/WeVoting.svg?branch=master)](https://travis-ci.org/elevenBeans/weVoting)
+[![GitHub stars](https://img.shields.io/github/stars/elevenBeans/WeVoting.svg)](https://github.com/elevenBeans/WeVoting/stargazers)
+[![Build Status](https://travis-ci.org/elevenBeans/WeVoting.svg?branch=master)](https://travis-ci.org/elevenBeans/WeVoting)
 [![Coverage Status](https://coveralls.io/repos/github/elevenBeans/WeVoting/badge.svg)](https://coveralls.io/github/elevenBeans/WeVoting)
 [![GitHub release](https://img.shields.io/github/release/elevenBeans/WeVoting.svg)](https://github.com/elevenBeans/WeVoting/releases)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md#pull-requests)
