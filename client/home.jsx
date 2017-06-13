@@ -6,13 +6,13 @@ import { Link } from 'react-router';
 
 import Footer from './components/footer';
 
-if(process.env.NODE_ENV === 'dev-test'){ // for unit test
-	if (typeof userInfo === 'undefined') {
-		userInfo = {
-			name:'Guest'
-		};
-	}
-}
+// if(process.env.NODE_ENV === 'dev-test'){ // for react unit test
+// 	if (typeof userInfo === 'undefined') {
+// 		var userInfo = {
+// 			name:'Guest'
+// 		};
+// 	}
+// }
 
 class Home extends Component {
 
