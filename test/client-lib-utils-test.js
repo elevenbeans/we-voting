@@ -3,21 +3,41 @@ var should = require("should");
 
 var utils = require('../client/lib/utils');
 
-// describe('utils', function() {
-//   describe('#getCookie()', function() {
-//     it('should return value when the value exist', function() {
-//       assert.equal(33.3, utils.getCookie(0.3333));
-//     });
-//   });
-// });
+describe('utils', function() {
+  describe('#getCookie()', function() {
+    it('should return value when the item exist', function() {
+      should.equal('', utils.getCookie('prop'));
+    });
+  });
+});
 
-// describe('utils', function() {
-//   describe('#setCookie()', function() {
-//     it('should return percentageNum when the value is digital', function() {
-//       assert.equal(33.3, utils.setCookie(0.3333));
-//     });
-//   });
-// });
+describe('utils', function() {
+  describe('#setCookie()', function() {
+    it('should return true when the cookie is setted', function() {
+      should.equal(true, utils.setCookie('name','libin', { path: '/'}));
+    });
+  });
+});
+
+describe('utils', function() {
+  describe('#Base64()', function() {
+    it('should return right decode value', function() {
+      should.equal('elevenbeansf2e@gmail.com', utils.base64.decode('ZWxldmVuYmVhbnNmMmVAZ21haWwuY29t')); // email
+    });
+    it('should return right decode value', function() {
+      should.equal('elevenBeans', utils.base64.decode('ZWxldmVuQmVhbnM=')); // name
+    });
+    it('should return decode value', function() {
+      should.equal('6982813', utils.base64.decode('Njk4MjgxMw==')); // name
+    });
+    // Njk4MjgxMw%3D%3D
+    it('should return a string', function() {
+      // should.equal(true, utils.base64.encode('elevenBeans'));
+      utils.base64.encode('elevenBeans').should.be.String();             
+
+    });
+  });
+});
 
 describe('utils', function() {
   describe('#getDevice()', function() {

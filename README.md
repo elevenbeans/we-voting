@@ -32,6 +32,7 @@ A voting APP.
   + Coverage to 6% *-- updated 2017-05-22*
   + Coverage to 29% *-- updated 2017-05-26*
   + Coverage to 50% *-- updated 2017-06-04*
+  + Coverage to 68% *-- updated 2017-06-13*
 
 <img width="500px" src="https://raw.githubusercontent.com/elevenBeans/Grocery/master/unitTest.png" />
 
