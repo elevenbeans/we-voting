@@ -1,9 +1,18 @@
 'use strict'
 
+import React from 'react';
 import { Component } from 'react';
 import { Link } from 'react-router';
 
 import Footer from './components/footer';
+
+if(process.env.NODE_ENV === 'dev-test'){ // for unit test
+	if (typeof userInfo === 'undefined') {
+		userInfo = {
+			name:'Guest'
+		};
+	}
+}
 
 class Home extends Component {
 
@@ -14,6 +23,7 @@ class Home extends Component {
   	$('#globalTransition').hide();
   }
   render(){
+
   	return(
   		<div className = "homepage">
   			<div style={{"background-color":"#eee"}}>
