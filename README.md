@@ -91,6 +91,7 @@ Run `npm run test`.
 Or,
 
 Run `npm run cover` to see test case coverage.
+
 <img width="500px" src="https://raw.githubusercontent.com/elevenBeans/Grocery/master/unitTest.png" />
 
 ## Techstack overview
