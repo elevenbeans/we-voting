@@ -111,6 +111,23 @@ Run `npm run cover` to see test case coverage.
 + Module bundler and compiler: Webpack + Babel
 + Open source components: [react-d3-components](https://github.com/codesuki/react-d3-components)
 
+## Pages
+
++ home page
+   + router: `/`
+   + example: `https://we-voting-ele.herokuapp.com/`
++ list page
+   + router: `/list(/:name)`
+   + example: `https://we-voting-ele.herokuapp.com/list`
+
++ detail page
+   + router: `/detail(/:id)`
+   + example: `https://we-voting-ele.herokuapp.com/detail/1494908221812`
+
++ new page
+   + router: `/new`
+   + example: `https://we-voting-ele.herokuapp.com/new`
+
 ## Directories
 
 ```
@@ -161,22 +178,6 @@ Run `npm run cover` to see test case coverage.
 |-- start.sh // start file for mac
 |-- webpack.config.js
 ```
-## Pages
-
-+ home page
-   + router: `/`
-   + example: `https://we-voting-ele.herokuapp.com/`
-+ list page
-   + router: `/list(/:name)`
-   + example: `https://we-voting-ele.herokuapp.com/list`
-
-+ detail page
-   + router: `/detail(/:id)`
-   + example: `https://we-voting-ele.herokuapp.com/detail/1494908221812`
-
-+ new page
-   + router: `/new`
-   + example: `https://we-voting-ele.herokuapp.com/new`
 
 ## LICENSE
 
