@@ -3,10 +3,9 @@ var express = require('express');
 var app = express();
 
 var compression = require('compression');
-
 var bodyParser = require('body-parser');
 
-var api = require('./controller/routes/api');
+var api = require('./controller/api');
 var view = require('./controller/routes/view');
 var login = require('./controller/routes/login');
 
