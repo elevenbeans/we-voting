@@ -127,7 +127,7 @@ class Detail extends Component {
 
     return (
 			<div className = "detailpage">
-        {this.state.pollDetailData.length !== 0 && 
+        {this.state.pollDetailData.length !== 0 &&
           <div>
             <div className="panel panel-default">
               <div className="panel-heading">
@@ -149,7 +149,7 @@ class Detail extends Component {
               {_result && _result.options.map( (item, index) => (
                 <li
                   className="list-group-item"
-                >            
+                >
                   <div className="input-group">
                     {item.option}
                     <span className="input-group-btn">
@@ -170,9 +170,9 @@ class Detail extends Component {
                 </li>
                 )
               )}
-            </ul>       
+            </ul>
 
-            { _result.options.length !== _countZero && 
+            { _result.options.length !== _countZero &&
               <PieChart
                 data={data}
                 width={_width}
@@ -193,5 +193,5 @@ class Detail extends Component {
     );
   }
 
-} 
+}
 export default Detail;

@@ -8,7 +8,7 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md#pull-requests)
 [![GitHub license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://mit-license.org)
 
-A voting APP. 
+A voting APP.
 
 [View Demo online](https://we-voting-ele.herokuapp.com/) [看 Demo 请戳这里](https://we-voting-ele.herokuapp.com/)
 
@@ -28,17 +28,12 @@ A voting APP.
 
 ## Doing list
 
-+ Unit test (Doing) 
++ Unit test (Doing)
   + Coverage to 6% *-- updated 2017-05-22*
   + Coverage to 29% *-- updated 2017-05-26*
   + Coverage to 50% *-- updated 2017-06-04*
   + Coverage to 73% *-- updated 2017-06-13*
-
-<img width="500px" src="https://raw.githubusercontent.com/elevenBeans/Grocery/master/unitTest.png" />
-
-+  <s>Wechat login (Doing)</s>
-   + <s>developer account in applying   *-- updated 2017-05-25*</s>
-+ Code formate
++ Code formate (Doing)
 + List page data pagination
 
 ## Contributing
@@ -59,7 +54,7 @@ A voting APP.
 	npm install
 	```
 
-## Run
+## Startup
 
 ### Development mode
 
@@ -72,9 +67,9 @@ Or `export NODE_ENV=dev-HMR && ./start.sh` (enable HMR).
 For windows,
 
 	npm run bundle // compile and bundle js files
-	 
+
 	npm run start // start node server
-	
+
 	npm run watch // watching changes
 
 **Don't forget to run [Mongodb](https://docs.mongodb.com/manual/mongo/) in your dev environment : )**
@@ -96,7 +91,7 @@ Run `npm run test`.
 Or,
 
 Run `npm run cover` to see test case coverage.
-
+<img width="500px" src="https://raw.githubusercontent.com/elevenBeans/Grocery/master/unitTest.png" />
 
 ## Techstack overview
 
@@ -139,7 +134,7 @@ Run `npm run cover` to see test case coverage.
   |-- DBhandler.js // DataBase CRUD
 |-- dist // compiled front-end code
   |-- vendor
-    |-- jquery.min.js 
+    |-- jquery.min.js
     |-- bootstrap.min.js
     |-- bootstrap.min.css
     |-- react-dom.min.js // react-dom production version
