@@ -1,5 +1,5 @@
 // var assert = require('assert');
-var should = require("should"); 
+var should = require('should');
 
 var utils = require('../client/lib/utils');
 
@@ -33,8 +33,7 @@ describe('utils', function() {
     // Njk4MjgxMw%3D%3D
     it('should return a string', function() {
       // should.equal(true, utils.base64.encode('elevenBeans'));
-      utils.base64.encode('elevenBeans').should.be.String();             
-
+      utils.base64.encode('elevenBeans').should.be.String();
     });
   });
 });
@@ -43,10 +42,9 @@ describe('utils', function() {
   describe('#getDevice()', function() {
     it('should return bool', function() {
       should.equal(false, utils.getDevice('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36').mobile);
-      should.equal(true, utils.getDevice('Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1').mobile);    
-      should.equal(true, utils.getDevice('Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1').ios);    
-      should.equal(true, utils.getDevice('Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1').iPhone);    
-
+      should.equal(true, utils.getDevice('Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1').mobile);
+      should.equal(true, utils.getDevice('Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1').ios);
+      should.equal(true, utils.getDevice('Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1').iPhone);
     });
   });
   describe('#formatPercentage()', function() {
