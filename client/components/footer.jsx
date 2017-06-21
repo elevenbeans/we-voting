@@ -7,7 +7,7 @@ const Footer = () => (
         >
         	© <br />
 					<iframe
-						src="https://ghbtns.com/github-btn.html?user=elevenBeans&type=follow&count=true"
+						src="https://ghbtns.com/github-btn.html?user=elevenbeans&type=follow&count=true"
 						frameborder="0"
 						scrolling="0"
 						width="170px"

@@ -1,10 +1,10 @@
 
 # WeVoting
 
-[![GitHub stars](https://img.shields.io/github/stars/elevenBeans/WeVoting.svg)](https://github.com/elevenBeans/WeVoting/stargazers)
-[![Build Status](https://travis-ci.org/elevenBeans/WeVoting.svg?branch=master)](https://travis-ci.org/elevenBeans/WeVoting)
-[![Coverage Status](https://coveralls.io/repos/github/elevenBeans/WeVoting/badge.svg)](https://coveralls.io/github/elevenBeans/WeVoting)
-[![GitHub release](https://img.shields.io/github/release/elevenBeans/WeVoting.svg)](https://github.com/elevenBeans/WeVoting/releases)
+[![GitHub stars](https://img.shields.io/github/stars/elevenbeans/we-voting.svg)](https://github.com/elevenbeans/we-voting/stargazers)
+[![Build Status](https://travis-ci.org/elevenbeans/we-voting.svg?branch=master)](https://travis-ci.org/elevenbeans/we-voting)
+[![Coverage Status](https://coveralls.io/repos/github/elevenbeans/we-voting/badge.svg)](https://coveralls.io/github/elevenbeans/we-voting)
+[![GitHub release](https://img.shields.io/github/release/elevenbeans/we-voting.svg)](https://github.com/elevenbeans/we-voting/releases)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md#pull-requests)
 [![GitHub license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://mit-license.org)
 
