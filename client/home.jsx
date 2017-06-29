@@ -15,7 +15,6 @@ import Footer from './components/footer';
 // }
 
 class Home extends Component {
-
 	constructor(props) {
     super(props);
   }
@@ -23,7 +22,6 @@ class Home extends Component {
   	$('#globalTransition').hide();
   }
   render(){
-
   	return(
   		<div className = "homepage">
   			<div style={{"background-color":"#eee"}}>
@@ -109,6 +107,5 @@ class Home extends Component {
       </div>
   	)
   }
-
 }
 export default Home;
