@@ -46,8 +46,8 @@ A voting APP.
 
 + Clone this project
 	```
-	git clone https://github.com/elevenBeans/WeVoting.git
-	cd WeVoting
+	git clone https://github.com/elevenbeans/we-voting.git
+	cd we-voting
 	```
 + Install local dependencies
 	```
