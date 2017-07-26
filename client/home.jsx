@@ -19,7 +19,7 @@ class Home extends Component {
     super(props);
   }
   componentDidMount() {
-  	$('#globalTransition').hide();
+    $('#globalTransition').css('display', 'none');
   }
   render(){
   	return(

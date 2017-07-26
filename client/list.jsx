@@ -17,7 +17,7 @@ class List extends Component {
     };
   }
   componentDidMount() {
-    $('#globalTransition').hide();
+    $('#globalTransition').css('display', 'none');
   	if(this.props.params.name === userInfo.name){
   		this.fetchPollList(this.props.params.name);
   	} else {

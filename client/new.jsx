@@ -17,7 +17,7 @@ class New extends Component {
     }
   }
   componentDidMount() {
-    $('#globalTransition').hide();
+    $('#globalTransition').css('display', 'none');
     if(!userInfo.name){
       // 不支持未登陆 landing, 滚去首页!
       location.href = location.origin;
@@ -27,7 +27,7 @@ class New extends Component {
     var _temp = this.state.options;
 
     if(!$('#poll-option').val()) return
-    
+
     _temp.push({
       'option': $('#poll-option').val(),
       'count': 0,
@@ -106,7 +106,7 @@ class New extends Component {
           style={{"text-align":"left"}}
         >
           Poll title:
-        </span> 
+        </span>
         <div
           className="input-group"
           style={{"width":"100%"}}
@@ -146,7 +146,7 @@ class New extends Component {
           style={{"text-align":"left"}}
         >
           Options:
-        </span> 
+        </span>
         <ul
           className="list-group"
           style={{"line-height": "34px"}}
@@ -155,7 +155,7 @@ class New extends Component {
             (item, index)=>(
               <li
                 className="list-group-item"
-              >            
+              >
                 <div className="input-group">
                   {item.option}
                   <span className="input-group-btn">
@@ -207,5 +207,5 @@ class New extends Component {
     );
   }
 
-} 
+}
 export default New;

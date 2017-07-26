@@ -33,7 +33,7 @@ class Detail extends Component {
     }
   }
   componentDidMount() {
-    $('#globalTransition').hide();
+    $('#globalTransition').css('display', 'none');
     this.fetchPollDetail(this.props.params.id);
   }
   fetchPollDetail(id){
