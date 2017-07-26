@@ -8,12 +8,11 @@ const Transition = () => (
 			"width":"100%",
 			"height":"100%",
 			"position":"fixed",
-			"zIndex":"9",
+			"zIndex":"999",
 			"display":"none",
 			"background-color":"rgba(0,0,0,0.2)"
 		}}
 	>
-
 		<svg width='150px' height='150px'
 			xmlns="http://www.w3.org/2000/svg"
 			viewBox="0 0 100 100" preserveAspectRatio="xMidYMid"
