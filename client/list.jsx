@@ -45,7 +45,7 @@ class List extends Component {
       url: '/api/getPollList',
       async: true,
       contentType: "application/json;charset=utf-8",
-      data: JSON.stringify({'userName': userName}),
+      data: JSON.stringify({'userName': userName,'pageSize': 5, 'pageNum':pageNum }),
       dataType: 'json',
       success: function (data) {
         if(data && data.length !== 0) {
