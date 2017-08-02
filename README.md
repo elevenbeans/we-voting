@@ -34,7 +34,7 @@ A voting APP.
   + Coverage to 50% *-- updated 2017-06-04*
   + Coverage to 73% *-- updated 2017-06-13*
 + Code formate (Doing)
-+ List page data pagination
++ ~~List page data pagination~~ (done by [@maokailu](https://github.com/maokailu))
 
 ## Contributing
 
@@ -81,6 +81,10 @@ Run `export NODE_ENV=pre && ./start.sh`.
 ### Production mode
 
 Run `export NODE_ENV=production && ./start.sh`.
+
+## Build
+
+Run `npm run build`
 
 ## Test
 
