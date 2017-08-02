@@ -15,28 +15,26 @@ import Footer from './components/footer';
 // }
 
 class Home extends Component {
-
 	constructor(props) {
     super(props);
   }
   componentDidMount() {
-  	$('#globalTransition').hide();
+    $('#globalTransition').css('display', 'none');
   }
   render(){
-
   	return(
   		<div className = "homepage">
   			<div style={{"background-color":"#eee"}}>
 			  	<div
 			  		className="jumbotron"
-			  	> 
+			  	>
 				  	<div
 				  		className="container"
 				  	>
 			      	<h1 style={{"font-size":"36px"}}>
 			      		Let's voting! <br />
 			      		<iframe
-			      			src = "https://ghbtns.com/github-btn.html?user=elevenBeans&repo=WeVoting&type=star&count=true"
+			      			src = "https://ghbtns.com/github-btn.html?user=elevenbeans&repo=we-voting&type=star&count=true"
 			      			scrolling="0"
 			      			width="110px"
 			      			height="30px"
@@ -51,7 +49,7 @@ class Home extends Component {
 
 			      	</h1>
 			      	<p className="lead">
-								This voting app is built by @elevenbeans, 
+								This voting app is built by @elevenbeans,
 								following the instructions of "Build a Voting App | Free Code Camp".<br />
 								Github Name: elevenBeans <br />
 							</p>
@@ -109,6 +107,5 @@ class Home extends Component {
       </div>
   	)
   }
-
 }
 export default Home;

@@ -8,7 +8,7 @@ import { RouteTransition, presets } from 'react-router-transition';
 import Header from './components/header';
 
 // import Home from './home'; // Load on demand
-// import Detail from './detail'; 
+// import Detail from './detail';
 // import List from './list';
 // import New from './new';
 
@@ -25,7 +25,8 @@ const App = function({ children, location }) {
       className="transition-wrapper"
       pathname={location.pathname}
       runOnMount={false}
-      {...styles}>
+      {...styles}
+    >
       {children}
     </RouteTransition>
   </div>
@@ -46,8 +47,8 @@ const rootRoute = {
     {
       path:'new',
       getComponent(nextState, callback){
+        $('#globalTransition').css('display', 'block');
         require.ensure([], require => {
-          $('#globalTransition').show();
           callback(null, require('new').default);
         }, 'new');
        }
@@ -55,8 +56,8 @@ const rootRoute = {
     {
       path:'list(/:name)',
       getComponent(nextState, callback){
+        $('#globalTransition').css('display', 'block');
         require.ensure([], require => {
-          $('#globalTransition').show();
           callback(null, require('list').default);
         }, 'list');
       }
@@ -64,8 +65,8 @@ const rootRoute = {
     {
       path:'detail(/:id)',
       getComponent(nextState, callback){
+        $('#globalTransition').css('display', 'block');
         require.ensure([],require => {
-          $('#globalTransition').show();
           callback(null, require('detail').default);
         }, 'detail');
       }
@@ -73,7 +74,11 @@ const rootRoute = {
   ]
 };
 
-render((<Router key = {Math.random()} history = {browserHistory} routes = {rootRoute}>
+render((<Router
+          key = {Math.random()}
+          history = {browserHistory}
+          routes = {rootRoute}
+        >
         </Router>
   ), document.getElementById('app')
 );
