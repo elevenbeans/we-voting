@@ -32,6 +32,8 @@
     "express": "^4.15.2",
     "mongodb": "^2.2.26",
     "react-d3-components": "^0.6.6",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2",
     "request": "^2.81.0"
   },
   "devDependencies": {
@@ -44,8 +46,9 @@
     "babel-preset-stage-0": "^6.24.1",
     "babel-preset-stage-1": "^6.13.0",
     "coveralls": "^2.13.1",
-    "eslint": "^4.0.0",
-    "eslint-plugin-react": "^7.1.0",
+    "eslint": "^4.11.0",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-react": "^7.5.1",
     "file-loader": "^0.11.1",
     "istanbul": "1.0.0-alpha.2",
     "jsdom": "^11.0.0",

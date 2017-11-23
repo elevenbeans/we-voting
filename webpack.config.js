@@ -36,11 +36,16 @@ var config = {
     loaders: [
       {
         test: /\.js$|\.jsx$/,
-        // exclude: /node_modules/,
+        exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
           presets: ['react', 'es2015']
         }
+      },
+      {
+        test: /\.js$|\.jsx$/,
+        exclude: /node_modules/,
+        loader: 'eslint-loader'
       }
     ]
   },
@@ -73,6 +78,9 @@ var config = {
     hot: process.env.NODE_ENV === 'dev-HMR',
     inline: true,
     headers: { 'Access-Control-Allow-Origin': '*' }
+  },
+  eslint: {
+    configFile: './.eslintrc'
   }
 };
 

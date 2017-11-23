@@ -1,5 +1,5 @@
 'use strict';
-
+import React from 'react';
 import { render } from 'react-dom';
 import { Router, browserHistory } from 'react-router';
 
@@ -19,17 +19,17 @@ var styles = presets.slideLeft;
 const App = function({ children, location }) {
   styles = location.action === 'POP' ? presets.slideRight : presets.slideLeft;
   return (
-  <div>
-    <Header />
-    <RouteTransition
-      className="transition-wrapper"
-      pathname={location.pathname}
-      runOnMount={false}
-      {...styles}
-    >
-      {children}
-    </RouteTransition>
-  </div>
+    <div>
+      <Header />
+      <RouteTransition
+        className="transition-wrapper"
+        pathname={location.pathname}
+        runOnMount={false}
+        {...styles}
+      >
+        {children}
+      </RouteTransition>
+    </div>
   );
 };
 
@@ -37,7 +37,7 @@ const rootRoute = {
   path: '/',
   component: App,
   indexRoute: {
-    getComponent(nextState, callback){
+    getComponent( nextState, callback ){
       require.ensure([], require => {
         callback('', require('home').default);
       },'home');
@@ -46,7 +46,7 @@ const rootRoute = {
   childRoutes: [
     {
       path:'new',
-      getComponent(nextState, callback){
+      getComponent( nextState, callback ){
         $('#globalTransition').css('display', 'block');
         require.ensure([], require => {
           callback(null, require('new').default);
@@ -74,11 +74,13 @@ const rootRoute = {
   ]
 };
 
-render((<Router
-          key = {Math.random()}
-          history = {browserHistory}
-          routes = {rootRoute}
-        >
-        </Router>
+render(
+  (
+    <Router
+      key = {Math.random()}
+      history = {browserHistory}
+      routes = {rootRoute}
+    >
+    </Router>
   ), document.getElementById('app')
 );

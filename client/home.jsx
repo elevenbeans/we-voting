@@ -32,7 +32,7 @@ class Home extends Component {
 				  		className="container"
 				  	>
 			      	<h1 style={{"font-size":"36px"}}>
-			      		Let's voting! <br />
+			      		{'Let\'s voting!'} <br />
 			      		<iframe
 			      			src = "https://ghbtns.com/github-btn.html?user=elevenbeans&repo=we-voting&type=star&count=true"
 			      			scrolling="0"
@@ -46,7 +46,6 @@ class Home extends Component {
 									}}
 			      		>
 			      		</iframe>
-
 			      	</h1>
 			      	<p className="lead">
 								This voting app is built by @elevenbeans,
