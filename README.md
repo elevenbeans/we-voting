@@ -1,7 +1,6 @@
 
 # WeVoting
 
-[![GitHub stars](https://img.shields.io/github/stars/elevenbeans/we-voting.svg)](https://github.com/elevenbeans/we-voting/stargazers)
 [![Build Status](https://travis-ci.org/elevenbeans/we-voting.svg?branch=master)](https://travis-ci.org/elevenbeans/we-voting)
 [![Coverage Status](https://coveralls.io/repos/github/elevenbeans/we-voting/badge.svg)](https://coveralls.io/github/elevenbeans/we-voting)
 [![GitHub release](https://img.shields.io/github/release/elevenbeans/we-voting.svg)](https://github.com/elevenbeans/we-voting/releases)
